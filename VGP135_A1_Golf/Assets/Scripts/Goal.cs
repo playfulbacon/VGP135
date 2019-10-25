@@ -5,15 +5,13 @@ using UnityEngine.UI;
 
 public class Goal : MonoBehaviour
 {
-    public Text goalText;
-
     void Start()
     {
-        goalText.gameObject.SetActive(false);    
+ 
     }
 
-    public void OnGoal()
+    public virtual void OnHit()
     {
-        goalText.gameObject.SetActive(true);
+        FindObjectOfType<GoalMenu>().SetGoalMenu(true);
     }
 }

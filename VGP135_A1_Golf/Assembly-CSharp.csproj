@@ -62,10 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Ball.cs" />
-    <Compile Include="Assets\FollowObject.cs" />
-    <Compile Include="Assets\Goal.cs" />
-    <Compile Include="Assets\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\FollowObject.cs" />
+    <Compile Include="Assets\Scripts\Goal.cs" />
+    <Compile Include="Assets\Scripts\GoalMenu.cs" />
+    <Compile Include="Assets\Scripts\LevelSelectHole.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>H:/VGP135_Git/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

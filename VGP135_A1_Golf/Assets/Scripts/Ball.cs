@@ -21,6 +21,12 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            rb.isKinematic = true;
+            isPressed = true;
+        }
+
         if (isPressed)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -41,24 +47,18 @@ public class Ball : MonoBehaviour
                 }
             }
         }
-    }
 
-    public void OnMouseDown()
-    {
-        rb.isKinematic = true;
-        isPressed = true;
-    }
-    public void OnMouseUp()
-    {
-        rb.isKinematic = false;
-        isPressed = false;
-        aimPrefab.gameObject.SetActive(false);
+        if (Input.GetMouseButtonUp(0))
+        {
+            rb.isKinematic = false;
+            isPressed = false;
+            aimPrefab.gameObject.SetActive(false);
 
-        if (isDragging)
-            rb.AddForce(hitDirection * hitForce);
+            if (isDragging)
+                rb.AddForce(hitDirection * hitForce);
 
-        isDragging = false;
-
+            isDragging = false;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -66,7 +66,7 @@ public class Ball : MonoBehaviour
         Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
         if (goal)
         {
-            goal.OnGoal();
+            goal.OnHit();
             rb.isKinematic = true;
         }
     }
