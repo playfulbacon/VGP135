@@ -12,7 +12,6 @@ public class Ball : MonoBehaviour
     Vector3 hitDirection;
     float hitForce = 1000f;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -20,7 +19,6 @@ public class Ball : MonoBehaviour
         aimPrefab.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isPressed)
@@ -61,5 +59,15 @@ public class Ball : MonoBehaviour
 
         isDragging = false;
 
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
+        if (goal)
+        {
+            goal.OnGoal();
+            rb.isKinematic = true;
+        }
     }
 }
