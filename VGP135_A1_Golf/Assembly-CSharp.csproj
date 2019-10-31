@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GoalMenu.cs" />
     <Compile Include="Assets\Scripts\LevelSelectHole.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\SideWaysMovement.cs" />
     <Compile Include="Assets\Scripts\SpringMovement.cs" />
     <Compile Include="Assets\Scripts\VerticalMovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
