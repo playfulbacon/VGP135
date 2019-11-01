@@ -17,4 +17,9 @@ public class LevelSelectHole : Goal
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public override void OnDrop()
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
@@ -12,11 +13,13 @@ public class Ball : MonoBehaviour
     Vector3 hitDirection;
     float hitForce = 1000f;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         aimPrefab = Instantiate(aimPrefab);
         aimPrefab.gameObject.SetActive(false);
+
     }
 
     void Update()
@@ -44,8 +47,8 @@ public class Ball : MonoBehaviour
                     hitDirection = -(groundHit - transform.position).normalized;
                     aimPrefab.transform.forward = hitDirection;
                     aimPrefab.position = transform.position + hitDirection * 1.25f;
-                }
-            }
+                } 
+            }     
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -67,6 +70,11 @@ public class Ball : MonoBehaviour
         if (goal)
         {
             goal.OnHit();
+            rb.isKinematic = true;
+        }
+        else if (goal && CompareTag("Finish"))
+        {
+            goal.OnDrop();
             rb.isKinematic = true;
         }
     }

@@ -14,4 +14,9 @@ public class Goal : MonoBehaviour
     {
         FindObjectOfType<GoalMenu>().SetGoalMenu(true);
     }
+
+    public virtual void OnDrop()
+    {
+        FindObjectOfType<GoalMenu>().SetGoalMenu(true);
+    }
 }
