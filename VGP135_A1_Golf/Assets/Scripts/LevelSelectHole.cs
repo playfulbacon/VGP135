@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectHole : Goal
 {
-    public TextMesh text;
+    public TextMesh sceneNameText;
+    public TextMesh authorNameText;
     public string sceneName;
+    public string authorName;
 
     void Start()
     {
-        text.text = sceneName;
+        sceneNameText.text = sceneName;
     }
 
     public override void OnHit()

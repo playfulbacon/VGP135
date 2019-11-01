@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Ball : MonoBehaviour
+public class LichengBall : MonoBehaviour
 {
     Rigidbody rb;
     bool isPressed = false;
@@ -11,6 +11,10 @@ public class Ball : MonoBehaviour
     public Transform aimPrefab;
     Vector3 hitDirection;
     float hitForce = 1000f;
+
+    // Licheng Zhou Edit --------------------------//|
+    public bool IsGoalable = true;                 //|
+    //---------------------------------------------//|
 
     void Start()
     {
@@ -64,19 +68,10 @@ public class Ball : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
-        if (goal)
+        if (goal && IsGoalable)
         {
             goal.OnHit();
             rb.isKinematic = true;
-        }
-    }
-
-    public void OnTriggerExit(Collider other)
-    {
-        FakeGoal fakegoal = other.attachedRigidbody?.GetComponent<FakeGoal>();
-        if(fakegoal)
-        {
-            fakegoal.SetTextInactive();
         }
     }
 }
