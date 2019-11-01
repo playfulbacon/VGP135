@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Ball : MonoBehaviour
+public class Ball3 : MonoBehaviour
 {
     Rigidbody rb;
     bool isPressed = false;
@@ -65,7 +65,8 @@ public class Ball : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
+        
+        MoveGoal goal = other.attachedRigidbody?.GetComponent<MoveGoal>();
         if (goal)
         {
             goal.OnHit();

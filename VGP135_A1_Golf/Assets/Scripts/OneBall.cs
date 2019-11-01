@@ -1,34 +1,42 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Ball : MonoBehaviour
+public class OneBall : MonoBehaviour
 {
     Rigidbody rb;
     bool isPressed = false;
     bool isDragging = false;
-    float moveCount;
+    bool isWon = false;
+    float moveCount = 0;
     public Transform aimPrefab;
     Vector3 hitDirection;
     float hitForce = 1000f;
+    public Goal goal2;
+    float timeCount = 0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         aimPrefab = Instantiate(aimPrefab);
         aimPrefab.gameObject.SetActive(false);
+        timeCount = 0;
     }
 
     void Update()
     {
+        Failure();
+        Debug.Log(timeCount);
+        timeCount += Time.fixedDeltaTime;
         if (Input.GetMouseButtonDown(0))
         {
             rb.isKinematic = true;
             isPressed = true;
         }
 
-        if (isPressed)
+        if (isPressed && (moveCount<1))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit = new RaycastHit();
@@ -60,6 +68,7 @@ public class Ball : MonoBehaviour
                 rb.AddForce(hitDirection * hitForce);
 
             isDragging = false;
+           
         }
     }
 
@@ -70,6 +79,23 @@ public class Ball : MonoBehaviour
         {
             goal.OnHit();
             rb.isKinematic = true;
+            isWon = true;
+            moveCount = 0;
+            timeCount = 0;
         }
     }
+
+    public void Failure()
+    {       
+        if (moveCount == 1 && (isWon == false) && ((timeCount>25)))
+        {
+            goal2.NotHit();
+            rb.isKinematic = true;
+            moveCount = 0;
+            //timeCount = 0;
+        }
+        
+    }
+
+
 }
