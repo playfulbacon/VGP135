@@ -8,7 +8,6 @@ public class Ball : MonoBehaviour
     Rigidbody rb;
     bool isPressed = false;
     bool isDragging = false;
-    float moveCount;
     public Transform aimPrefab;
     Vector3 hitDirection;
     float hitForce = 1000f;
@@ -51,7 +50,6 @@ public class Ball : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
-            moveCount++;
             rb.isKinematic = false;
             isPressed = false;
             aimPrefab.gameObject.SetActive(false);
@@ -70,6 +68,15 @@ public class Ball : MonoBehaviour
         {
             goal.OnHit();
             rb.isKinematic = true;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        FakeGoal fakegoal = other.attachedRigidbody?.GetComponent<FakeGoal>();
+        if(fakegoal)
+        {
+            fakegoal.SetTextInactive();
         }
     }
 }

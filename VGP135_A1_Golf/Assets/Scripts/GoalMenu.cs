@@ -20,7 +20,6 @@ public class GoalMenu : MonoBehaviour
 
     public void PlayAgainButtonDown()
     {
-        Debug.Log("3");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
