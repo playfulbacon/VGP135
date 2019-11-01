@@ -62,15 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FanRotation.cs" />
+    <Compile Include="Assets\FlavioStuff\FanRotation.cs" />
+    <Compile Include="Assets\FlavioStuff\ResetLevel.cs" />
+    <Compile Include="Assets\FlavioStuff\SideWaysMovement.cs" />
+    <Compile Include="Assets\FlavioStuff\SpringMovement.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\FollowObject.cs" />
     <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\GoalMenu.cs" />
     <Compile Include="Assets\Scripts\LevelSelectHole.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
-    <Compile Include="Assets\Scripts\SideWaysMovement.cs" />
-    <Compile Include="Assets\Scripts\SpringMovement.cs" />
     <Compile Include="Assets\Scripts\VerticalMovement.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/423303/Documents/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
