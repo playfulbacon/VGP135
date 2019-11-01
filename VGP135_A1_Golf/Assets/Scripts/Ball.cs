@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     bool isDragging = false;
     public Transform aimPrefab;
     Vector3 hitDirection;
-    float hitForce = 1000f;
+    float hitForce = 900f;
 
 
     void Start()
@@ -72,7 +72,7 @@ public class Ball : MonoBehaviour
             goal.OnHit();
             rb.isKinematic = true;
         }
-        else if (goal && CompareTag("Finish"))
+        else if (CompareTag("Finish"))
         {
             goal.OnDrop();
             rb.isKinematic = true;
