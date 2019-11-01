@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour
 
     float forcePercentage = 0.0f;
 
-    public float maxForceDistance = 300.0f;
+    public float maxForceDistance = 200.0f;
 
     float slowPercentage = 0.5f;
 
@@ -33,11 +33,16 @@ public class Ball : MonoBehaviour
     [SerializeField]
     float currentForceDistance;
 
+    [SerializeField]
+    float aimPrefabZLength;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         aimPrefab = Instantiate(aimPrefab);
+        aimPrefabZLength = aimPrefab.transform.localScale.z;
         aimPrefab.gameObject.SetActive(false);
+
     }
 
     void Update()
@@ -69,7 +74,7 @@ public class Ball : MonoBehaviour
 
                     hitDirection = -(groundHit - transform.position).normalized;
                     aimPrefab.transform.forward = hitDirection;
-                    aimPrefab.position = transform.position + hitDirection * 1.25f;
+                    aimPrefab.position = transform.position - hitDirection * 1.25f;
                 }
             }
         }
@@ -77,13 +82,14 @@ public class Ball : MonoBehaviour
         if (isDragging)
         {
             mouseFinalPosition = Input.mousePosition;
-            if (currentForceDistance < maxForceDistance)
-                currentForceDistance = (mouseFinalPosition - mouseStartPosition).magnitude;
-            else
-                currentForceDistance = maxForceDistance - 0.1f;
+            currentForceDistance = (mouseFinalPosition - mouseStartPosition).magnitude;
+
             forcePercentage = currentForceDistance / maxForceDistance;
 
-            //aimPrefab.localScale += new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, aimPrefab.localScale.z * forcePercentage);
+            if (forcePercentage > 1.0f)
+                forcePercentage = 1.0f;
+
+            aimPrefab.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, aimPrefabZLength * forcePercentage);
         }
 
         if (Input.GetMouseButtonUp(0))
