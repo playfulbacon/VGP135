@@ -70,4 +70,13 @@ public class Ball : MonoBehaviour
             rb.isKinematic = true;
         }
     }
+
+    public void OnTriggerExit(Collider other)
+    {
+        FakeGoal fakegoal = other.attachedRigidbody?.GetComponent<FakeGoal>();
+        if(fakegoal)
+        {
+            fakegoal.SetTextInactive();
+        }
+    }
 }
