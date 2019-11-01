@@ -18,12 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level2.unity
     guid: af66dc6a2b32df848ad0667545abc047
   - enabled: 1
-    path: Assets/Scenes/Level3Cyro.unity
+    path: Assets/Scenes/Cyro_Level3.unity
     guid: 7b1fc823f3a1c7648944e116d16da1bf
   - enabled: 1
-    path: Assets/Scenes/Level4Cyro.unity
+    path: Assets/Scenes/Cyro_Level4.unity
     guid: 135378d4029b64f4fbf1b19595e6085a
   - enabled: 1
-    path: Assets/Scenes/Level5Cyro.unity
+    path: Assets/Scenes/Cyro_Level5.unity
     guid: 799cf910bcb22344fa1bfb2f2f6ae3bd
   m_configObjects: {}
