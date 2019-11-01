@@ -1,16 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.IO;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
     Rigidbody rb;
     bool isPressed = false;
+    [SerializeField]
     bool isDragging = false;
     public Transform aimPrefab;
     Vector3 hitDirection;
-    float hitForce = 1000f;
+    float hitMaxForce = 1000f;
+
+    [SerializeField]
+    float currentForce = 0f;
+
+    [SerializeField]
+    Vector3 mouseStartPosition;
+    [SerializeField]
+    Vector3 mouseFinalPosition;
+
+    float forcePercentage = 0.0f;
+
+    public float maxForceDistance = 300.0f;
+
+    float slowPercentage = 0.5f;
+
+    bool isClicked = false;
+
+    [SerializeField]
+    float currentForceDistance;
 
     void Start()
     {
@@ -39,6 +60,11 @@ public class Ball : MonoBehaviour
                 if (Vector3.Distance(transform.position, groundHit) > 0.5f)
                 {
                     isDragging = true;
+                    if (!isClicked)
+                    {
+                        mouseStartPosition = Input.mousePosition;
+                        isClicked = true;
+                    }
                     aimPrefab.gameObject.SetActive(true);
 
                     hitDirection = -(groundHit - transform.position).normalized;
@@ -48,16 +74,33 @@ public class Ball : MonoBehaviour
             }
         }
 
+        if (isDragging)
+        {
+            mouseFinalPosition = Input.mousePosition;
+            if (currentForceDistance < maxForceDistance)
+                currentForceDistance = (mouseFinalPosition - mouseStartPosition).magnitude;
+            else
+                currentForceDistance = maxForceDistance - 0.1f;
+            forcePercentage = currentForceDistance / maxForceDistance;
+
+            //aimPrefab.localScale += new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, aimPrefab.localScale.z * forcePercentage);
+        }
+
         if (Input.GetMouseButtonUp(0))
         {
+            currentForce = hitMaxForce * forcePercentage;
+
             rb.isKinematic = false;
             isPressed = false;
             aimPrefab.gameObject.SetActive(false);
 
             if (isDragging)
-                rb.AddForce(hitDirection * hitForce);
+                rb.AddForce(hitDirection * currentForce);
 
             isDragging = false;
+            currentForce = 0.0f;
+
+            isClicked = false;
         }
     }
 
