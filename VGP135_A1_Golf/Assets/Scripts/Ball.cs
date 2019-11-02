@@ -8,7 +8,6 @@ public class Ball : MonoBehaviour
 {
     Rigidbody rb;
     bool isPressed = false;
-    [SerializeField]
     bool isDragging = false;
     public Transform aimPrefab;
     Vector3 hitDirection;
@@ -17,23 +16,19 @@ public class Ball : MonoBehaviour
     [SerializeField]
     float currentForce = 0f;
 
-    [SerializeField]
     Vector3 mouseStartPosition;
-    [SerializeField]
     Vector3 mouseFinalPosition;
 
     float forcePercentage = 0.0f;
 
-    public float maxForceDistance = 200.0f;
+    float maxForceDistance = 200.0f;
 
-    float slowPercentage = 0.5f;
+    float timeRatio = 0.2f;
 
     bool isClicked = false;
 
-    [SerializeField]
     float currentForceDistance;
 
-    [SerializeField]
     float aimPrefabZLength;
 
     void Start()
@@ -51,6 +46,7 @@ public class Ball : MonoBehaviour
         {
             rb.isKinematic = true;
             isPressed = true;
+            Time.timeScale = timeRatio;
         }
 
         if (isPressed)
@@ -90,6 +86,8 @@ public class Ball : MonoBehaviour
                 forcePercentage = 1.0f;
 
             aimPrefab.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, aimPrefabZLength * forcePercentage);
+
+
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -107,7 +105,9 @@ public class Ball : MonoBehaviour
             currentForce = 0.0f;
 
             isClicked = false;
+            Time.timeScale = 1.0f;
         }
+        Time.fixedDeltaTime = .02f * Time.timeScale;
     }
 
     public void OnTriggerEnter(Collider other)
