@@ -33,6 +33,8 @@ public class PauseMenu : MonoBehaviour
         pauseButtonHolder.SetActive(!value);
     }
 
+    public void ReplayBtnMenu() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     public void OnLevelSelect()
     {
         SceneManager.LoadScene(levelSelectSceneName);
