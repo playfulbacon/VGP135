@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
@@ -11,16 +15,21 @@ public class Ball : MonoBehaviour
     public Transform aimPrefab;
     Vector3 hitDirection;
     float hitForce = 1000f;
-
+    float maxHealth = 100.0f;
+    public float health = 0.0f;
+    public Slider slider;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         aimPrefab = Instantiate(aimPrefab);
         aimPrefab.gameObject.SetActive(false);
+        health = maxHealth;
     }
 
     void Update()
     {
+        UpdateUI();
+
         if (Input.GetMouseButtonDown(0))
         {
             rb.isKinematic = true;
@@ -77,6 +86,26 @@ public class Ball : MonoBehaviour
         if(fakegoal)
         {
             fakegoal.SetTextInactive();
+        }
+    }
+
+    float CalculateHealth()
+    {
+        return health / maxHealth;
+    }
+    public void UpdateUI()
+    {
+        slider.value = CalculateHealth();
+        if(health <= 0.0f)
+        {
+            //Reset level
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //Destroy(gameObject)
+        }
+        if (health >= maxHealth)
+        {
+            slider.value = maxHealth;
+            health = maxHealth;
         }
     }
 }
