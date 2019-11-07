@@ -25,7 +25,18 @@ public class Ball : MonoBehaviour
         aimPrefab.gameObject.SetActive(false);
         health = maxHealth;
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        Obstacle obstacle = collision.gameObject.GetComponent<Obstacle>();
+        if (obstacle != null)
+        {
+            TakeDamage(obstacle.DoDamage());
+        }
+    }
+    private void TakeDamage(float damage)
+    {
+        health -= damage;
+    }
     void Update()
     {
         UpdateUI();
