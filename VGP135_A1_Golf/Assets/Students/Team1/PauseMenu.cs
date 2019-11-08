@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
     public string levelSelectSceneName;
     public GameObject pauseMenuHolder;
     public GameObject pauseButtonHolder;
-    bool pause;
+    public bool isPaused = false;
 
     private void Awake()
     {
@@ -29,8 +29,13 @@ public class PauseMenu : MonoBehaviour
 
     public void SetPauseMenu(bool value)
     {
+        isPaused = value;
         pauseMenuHolder.SetActive(value);
         pauseButtonHolder.SetActive(!value);
+
+        Ball[] balls = FindObjectsOfType<Ball>();
+        foreach (Ball ball in balls)
+            ball.enabled = !value;
     }
 
     public void ReplayBtnMenu() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);

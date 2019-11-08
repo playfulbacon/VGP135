@@ -37,7 +37,7 @@ public class Ball : MonoBehaviour
         aimPrefab.gameObject.SetActive(false);
     }
 
-    void Update()
+    void LateUpdate()
     {
         if (Input.GetMouseButtonDown(0))
         {
