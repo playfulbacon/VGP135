@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotatable : MonoBehaviour
+public class Mingzhuo_Rotatable : MonoBehaviour
 {
     public Quaternion mDestinationRotation;
-    public TriggerObject[] Z_0_RotationTriggers;
-    public TriggerObject[] Z_90_RotationTriggers;
-    public TriggerObject[] Z_180_RotationTriggers;
-    public TriggerObject[] Z_270_RotationTriggers;
+    public Mingzhuo_TriggerObject[] Z_0_RotationTriggers;
+    public Mingzhuo_TriggerObject[] Z_90_RotationTriggers;
+    public Mingzhuo_TriggerObject[] Z_180_RotationTriggers;
+    public Mingzhuo_TriggerObject[] Z_270_RotationTriggers;
 
     void Awake()
     {

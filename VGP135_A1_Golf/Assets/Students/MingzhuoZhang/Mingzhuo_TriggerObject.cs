@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class TriggerObject : MonoBehaviour
+public class Mingzhuo_TriggerObject : MonoBehaviour
 {
     public bool mIsOn = false;
 
