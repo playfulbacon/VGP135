@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimPrefab: {fileID: 6651614994318895179, guid: 04d589b9bd9a41848a3d502a0c1e82c7,
     type: 3}
+  currentForce: 0
 --- !u!54 &1050037476697080967
 Rigidbody:
   m_ObjectHideFlags: 0

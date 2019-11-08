@@ -13,6 +13,7 @@ public class LevelSelectHole : Goal
     void Start()
     {
         sceneNameText.text = sceneName;
+        authorNameText.text = authorName;
     }
 
     public override void OnHit()
