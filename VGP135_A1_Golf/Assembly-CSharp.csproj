@@ -86,6 +86,7 @@
     <Compile Include="Assets\Students\Team1\PauseMenu.cs" />
     <Compile Include="Assets\Students\Wallace\Move.cs" />
     <Compile Include="Assets\Students\Wallace\Rotatetion.cs" />
+    <Compile Include="Assets\Students\William\CameraRotate.cs" />
     <Compile Include="Assets\Students\William\FakeGoal.cs" />
     <Compile Include="Assets\Students\William\Shrink.cs" />
     <Reference Include="Unity.Timeline.Editor">
