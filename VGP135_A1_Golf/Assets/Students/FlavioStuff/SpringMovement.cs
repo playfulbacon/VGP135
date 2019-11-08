@@ -11,6 +11,11 @@ public class SpringMovement : MonoBehaviour
     public float delayTime;
     public float forceToApply;
     float timer;
+    float startMass;
+    Vector3 startVelocity;
+    Vector3 startAngularVelocity;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,13 +23,19 @@ public class SpringMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         timer = delayTime;
         startTimer = false;
+        if (rigidbody)
+        {
+            startMass = rigidbody.mass;
+            startVelocity = rigidbody.velocity;
+            startAngularVelocity = rigidbody.angularVelocity;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         if (startTimer)
-            timer -= (Time.deltaTime * 1.0f);
+            timer -= (Time.unscaledDeltaTime * 1.0f);
         if (rigidbody)
         {
             if (rigidbody.velocity.x < 0.2f && rigidbody.velocity.x > -0.2f && !startTimer)
@@ -32,10 +43,24 @@ public class SpringMovement : MonoBehaviour
 
             if(timer < 0.0f)
             {
-                Debug.Log("Apply foce");
                 rigidbody.velocity -= new Vector3(forceToApply, 0.0f);
+
+                //if (Time.timeScale > 0.0 && Time.timeScale < 0.9f)
+                //{
+                //    rigidbody.mass /= Time.unscaledTime;
+                //    //rigidbody.velocity *= Time.unscaledTime;
+                //    rigidbody.angularVelocity *= Time.unscaledTime;
+                //}
+
+                //if(Time.timeScale > 0.9f)
+                //{
+                //    rigidbody.mass = startMass;
+                //    rigidbody.velocity = startVelocity;
+                //    rigidbody.angularVelocity = startAngularVelocity;
+                //}
                 startTimer = false;
                 timer = delayTime;
+
             }
         }
 

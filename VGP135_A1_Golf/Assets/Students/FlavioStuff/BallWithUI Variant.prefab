@@ -26,6 +26,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BallWithUI Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1050037476697080967, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1050037476697080967, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1050037476697080966, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,16 +102,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6651614994318895179, guid: 04d589b9bd9a41848a3d502a0c1e82c7,
         type: 3}
-    - target: {fileID: 1050037476697080967, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
-        type: 3}
-      propertyPath: m_Drag
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1050037476697080967, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1b78ee7f7c2e25488f7a4efe92f6943, type: 3}
 --- !u!1 &3288610351239084053 stripped
