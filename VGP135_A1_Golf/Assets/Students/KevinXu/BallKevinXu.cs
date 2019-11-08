@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Ball : MonoBehaviour
+public class BallKevinXu : MonoBehaviour
 {
     Rigidbody rb;
     bool isPressed = false;
