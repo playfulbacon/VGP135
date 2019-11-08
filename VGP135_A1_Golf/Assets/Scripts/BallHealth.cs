@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class BallHealth : MonoBehaviour
 {
-    float maxHealth = 100.0f;
-    public float health = 0.0f;
+    public float maxHealth = 100f;
+    float health = 0.0f;
     public Slider slider;
 
     void Start()
@@ -38,7 +38,7 @@ public class BallHealth : MonoBehaviour
 
     private void UpdateUI()
     {
-        slider.value = health / maxHealth;
+        slider.value = Mathf.Lerp(0f, 1f, health / maxHealth);
 
         if (health <= 0.0f)
         {
