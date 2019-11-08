@@ -83,7 +83,7 @@ public class Ball : MonoBehaviour
             if (forcePercentage > 1.0f)
                 forcePercentage = 1.0f;
 
-            aimPrefab.GetComponent<Aimer>().forceQuad.transform.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
+    
             //aimPrefab.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
         }
 
