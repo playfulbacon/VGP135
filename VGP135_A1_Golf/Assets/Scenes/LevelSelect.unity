@@ -452,6 +452,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectHole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1553597922951350539, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -668,7 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33df642a3ccca8e4597d203ef6c5983f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 2079037514}
   followSpeed: 5
 --- !u!4 &1335280332
 Transform:
@@ -751,6 +755,125 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1516029253
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1516029255}
+  - component: {fileID: 1516029254}
+  m_Layer: 0
+  m_Name: Level Select Setup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1516029254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516029253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1449e5ebd7c5a14d9a1744a5ce112ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  studentLevelSelectInfos:
+  - studentName: William
+    levelNames:
+    - William_Level3
+    - William_Level4
+    - William_Level5
+  - studentName: Wallace
+    levelNames:
+    - Wallace_Level1
+    - Wallace_Level2
+    - Wallace_Level3
+  - studentName: Viren
+    levelNames:
+    - Viren_Level1
+    - Viren_Level2
+    - Viren_Level3
+  - studentName: Mingzhuo Zhang (Peter)
+    levelNames:
+    - MingzhuoZhang_Level2
+    - MingzhuoZhang_Level3
+    - MingzhuoZhang_Level4
+  - studentName: Licheng Zhou (Peter)
+    levelNames:
+    - LichengZhou_level1
+    - LichengZhou_level2
+    - LichengZhou_level3
+  - studentName: Justin Questroo
+    levelNames:
+    - JustinQuestroo_Level4
+    - JustinQuestroo_Level5
+    - JustinQuestroo_WorkshopLevel1
+  - studentName: Justin Tim
+    levelNames:
+    - Justin_Tim_Level2
+    - Justin_Tim_Level3
+    - Justin_Tim_NewLevel1
+  - studentName: John Wu
+    levelNames:
+    - 
+    - 
+    - 
+  - studentName: Flavio
+    levelNames:
+    - Flavio_Level1
+    - Flavio_Level2
+    - Flavio_Level3
+  - studentName: Cyro
+    levelNames:
+    - Cyro_Level3
+    - Cyro_Level4
+    - Cyro_Level5
+  - studentName: Andy Bacon
+    levelNames:
+    - AndyBacon_Level1
+    - AndyBacon_Level2
+    - AndyBacon_Level3
+  - studentName: Amy
+    levelNames:
+    - Amy_Level1
+    - Amy_Level2
+    - Amy_Level3
+  - studentName: Aisle
+    levelNames:
+    - Aisle_Level_1
+    - Aisle_Level_2
+    - Aisle_Level_3
+  - studentName: 
+    levelNames: []
+  - studentName: 
+    levelNames: []
+  - studentName: 
+    levelNames: []
+  levelSelectHolePrefab: {fileID: 1553597922951350539, guid: 7f17882801be7ba4288998f02949a63f,
+    type: 3}
+  rowSpace: 5
+  columnSpace: 10
+--- !u!4 &1516029255
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516029253}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1798306024
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,7 +892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1798306025
 Transform:
   m_ObjectHideFlags: 0
@@ -892,7 +1015,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3a601d97640c4b4485855f41e04d3fa, type: 2}
+  - {fileID: 2100000, guid: 7d68c7c3c9bd82442a76959bf2092621, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -934,12 +1057,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2079037514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1050037476697080960, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
-    type: 3}
-  m_PrefabInstance: {fileID: 1050037478394371274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119319698
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1103,7 @@ PrefabInstance:
     - target: {fileID: 1050037476697080966, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 1050037476697080966, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
         type: 3}
@@ -1051,6 +1168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelSelectHole
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553597922951350539, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -1126,11 +1248,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1209356635}
     m_Modifications:
-    - target: {fileID: 7232979585227150937, guid: ce4dc792537f80b40ad94c196b94b65a,
-        type: 3}
-      propertyPath: m_Name
-      value: ButtonHolder
-      objectReference: {fileID: 0}
     - target: {fileID: 7232979585227150936, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1236,6 +1353,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7232979585227150937, guid: ce4dc792537f80b40ad94c196b94b65a,
+        type: 3}
+      propertyPath: m_Name
+      value: ButtonHolder
+      objectReference: {fileID: 0}
     - target: {fileID: 4127051947828859647, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1266,11 +1388,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 150
       objectReference: {fileID: 0}
-    - target: {fileID: 4127051947828859646, guid: ce4dc792537f80b40ad94c196b94b65a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 59471596}
     - target: {fileID: 4127051947164865444, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1301,6 +1418,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 4127051947828859646, guid: ce4dc792537f80b40ad94c196b94b65a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 59471596}
     - target: {fileID: 4127051947164865445, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
