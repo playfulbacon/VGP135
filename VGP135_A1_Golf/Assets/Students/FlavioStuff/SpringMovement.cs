@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpringMovement : MonoBehaviour
 {
     SpringJoint springJoint;
-    Rigidbody rigidbody;
+    new Rigidbody rigidbody;
     bool startTimer;
     [Tooltip("How long does it need to wait for applying velocity")]
     public float delayTime;
