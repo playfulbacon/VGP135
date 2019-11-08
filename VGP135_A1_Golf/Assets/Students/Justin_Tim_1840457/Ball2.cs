@@ -74,7 +74,7 @@ public class Ball2 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Ball2 ball = collision.gameObject.GetComponent<Ball2>();
+        Ball ball = collision.gameObject.GetComponent<Ball>();
         if (ball)
         {
             FindObjectOfType<GoalMenu>().SetGoalMenu(true);
