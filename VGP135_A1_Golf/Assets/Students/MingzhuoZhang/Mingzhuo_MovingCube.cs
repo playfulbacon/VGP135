@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingCube : MonoBehaviour
+public class Mingzhuo_MovingCube : MonoBehaviour
 {
     public float mStartHeight;
     public float mMovingRange;
