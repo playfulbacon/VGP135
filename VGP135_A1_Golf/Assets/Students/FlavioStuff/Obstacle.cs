@@ -5,9 +5,4 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float damage = 12.0f;
-
-    public float DoDamage()
-    {
-        return damage;
-    }
 }
