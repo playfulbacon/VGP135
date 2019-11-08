@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.IO;
 
-
-
-
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
@@ -28,8 +25,6 @@ public class Ball : MonoBehaviour
 
     float timeRatio = 0.2f;
 
-    bool isClicked = false;
-
     float currentForceDistance;
 
     float aimPrefabZLength;
@@ -40,18 +35,15 @@ public class Ball : MonoBehaviour
         aimPrefab = Instantiate(aimPrefab);
         aimPrefabZLength = aimPrefab.transform.localScale.z;
         aimPrefab.gameObject.SetActive(false);
-
     }
-
 
     void Update()
     {
-
-
         if (Input.GetMouseButtonDown(0))
         {
             rb.isKinematic = true;
             isPressed = true;
+
             Time.timeScale = timeRatio;
         }
 
@@ -59,6 +51,7 @@ public class Ball : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit = new RaycastHit();
+
             if (Physics.Raycast(ray, out hit))
             {
                 Vector3 groundHit = hit.point;
@@ -66,17 +59,16 @@ public class Ball : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, groundHit) > 0.5f)
                 {
-                    isDragging = true;
-                    if (!isClicked)
-                    {
+                    if (!isDragging)
                         mouseStartPosition = Input.mousePosition;
-                        isClicked = true;
-                    }
+
+                    isDragging = true;
+ 
                     aimPrefab.gameObject.SetActive(true);
 
                     hitDirection = -(groundHit - transform.position).normalized;
                     aimPrefab.transform.forward = hitDirection;
-                    aimPrefab.position = transform.position - hitDirection * 1.25f;
+                    aimPrefab.position = transform.position - hitDirection * 0.5f;
                 }
             }
         }
@@ -91,9 +83,8 @@ public class Ball : MonoBehaviour
             if (forcePercentage > 1.0f)
                 forcePercentage = 1.0f;
 
-            aimPrefab.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, aimPrefabZLength * forcePercentage);
-
-
+            aimPrefab.GetComponent<Aimer>().forceQuad.transform.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
+            //aimPrefab.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
         }
 
         if (Input.GetMouseButtonUp(0))
@@ -110,9 +101,9 @@ public class Ball : MonoBehaviour
             isDragging = false;
             currentForce = 0.0f;
 
-            isClicked = false;
             Time.timeScale = 1.0f;
         }
+
         Time.fixedDeltaTime = .02f * Time.timeScale;
     }
 
