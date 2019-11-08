@@ -48,7 +48,7 @@ public class Mingzhuo_Rotatable : MonoBehaviour
                 mDestinationRotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
             }
         }
-        //mDestinationRotation = Quaternion.Euler();
+ 
         transform.localRotation = Quaternion.Slerp(transform.localRotation, mDestinationRotation, 10.0f * Time.deltaTime);
     }
 }

@@ -22,7 +22,7 @@ public class Mingzhuo_TriggerObject : MonoBehaviour
         var rb = other.gameObject.GetComponentInParent<Rigidbody>();
         if (rb)
         {
-            //rb.velocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
             rb.AddForce(new Vector3(0.0f, 5.0f, 0.0f),ForceMode.Impulse);
         }
         mRenderr.material.color = mOnColor;
