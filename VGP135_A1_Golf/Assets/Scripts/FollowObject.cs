@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class FollowObject : MonoBehaviour
 {
-    GameObject objectToFollow;
+    public GameObject objectToFollow;
     public float followSpeed = 5f;
 
     void Start()
     {
-        objectToFollow = FindObjectOfType<Ball>().gameObject;
+        if (objectToFollow == null)
+            objectToFollow = FindObjectOfType<Ball>().gameObject;
     }
 
     void Update()
