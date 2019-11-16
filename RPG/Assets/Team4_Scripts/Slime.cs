@@ -8,10 +8,18 @@ public class Slime : Enemy
 
     float mRandomDirectionCooldown = 1.0f;
     float mRandomDirectionTracker;
+
+    protected override void CreateLootTable()
+    {
+        mLootTable.Add(new HealthPotion());
+    }
+
     private void Start()
     {
+        base.Start();
         SetRandomDirection();
         mAttackCooldown = 2.0f;
+        CreateLootTable();
     }
 
     void SetRandomDirection()
@@ -23,6 +31,11 @@ public class Slime : Enemy
     {
         Move();
         mAttackTracker += Time.deltaTime;
+    }
+
+    private void Update()
+    {
+        base.Update();
     }
 
 
