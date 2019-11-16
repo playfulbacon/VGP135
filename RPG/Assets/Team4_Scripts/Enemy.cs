@@ -37,6 +37,16 @@ public abstract class Enemy : MonoBehaviour
         //player = FindObjectOfType<Player>();
     }
 
+    protected void FixedUpdate()
+    {
+        mAttackTracker += Time.deltaTime;
+    }
+
+    protected void Update()
+    {
+        DeathCheck();
+    }
+
     //public int GetEXP() { return mEXP; }
     private void DeathCheck()
     {
@@ -45,17 +55,11 @@ public abstract class Enemy : MonoBehaviour
             //player.GainEXP(mEXP);
             Inventory inven = FindObjectOfType<Inventory>();
             if (inven != null)
-            inven.AddItemToInventory(LootCalculation());
+            inven.AddItemsToInventory(LootCalculation());
             Destroy(gameObject);
             Debug.Log("Enemy died");
         }
     }
-
-    protected void Update()
-    {
-        DeathCheck();
-    }
-
 
     public int GetAttackValue() { return mAttack; }
     public int GetCurrentHP() { return mCurrentHP; }

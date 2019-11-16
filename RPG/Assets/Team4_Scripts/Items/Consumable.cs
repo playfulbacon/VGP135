@@ -13,4 +13,6 @@ public abstract class Consumable : Item
         if(mItemCount > 0)
             mItemCount--;
     }
+
+    public abstract void UseItem();
 }

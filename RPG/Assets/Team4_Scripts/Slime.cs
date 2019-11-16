@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slime : Enemy
+public sealed class Slime : Enemy
 {
     Vector3 mRandomDirection;
 
@@ -11,10 +11,14 @@ public class Slime : Enemy
 
     protected override void CreateLootTable()
     {
-        HealthPotion potion = new HealthPotion();
-        mLootTable.Add(potion);
+        for (int i = 0; i < 200; i++)
+        {
+            mLootTable.Add(new HealthPotion());
+            mLootTable.Add(new FireHappy());
+            mLootTable.Add(new Frostmourne());
+        }
 
-        Debug.Log("Slime's loot table:");
+        Debug.Log("Slime's loot table:" + mLootTable.Count);
         foreach (var item in mLootTable)
         {
             Debug.Log(item.GetType().Name);
@@ -36,8 +40,8 @@ public class Slime : Enemy
 
     private void FixedUpdate()
     {
+        base.FixedUpdate();
         Move();
-        mAttackTracker += Time.deltaTime;
         mCurrentHP--;
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Armor : MonoBehaviour
+public abstract class Armor : Equipment
 {
     protected int mDefense;
 

@@ -17,8 +17,6 @@ public abstract class Item : MonoBehaviour
 
     public ItemGrade GetItemGrade() { return mGrade; }
 
-    public abstract void UseItem();
-
     public int GetDropChance() { return mDropChance; }
 
     //in each item's start, needs to call this function to calculate drop chance

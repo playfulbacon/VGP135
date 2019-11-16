@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPotion : Consumable
+public sealed class HealthPotion : Consumable
 {
     int mRecoverAmount = 10;
 

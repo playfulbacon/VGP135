@@ -8,9 +8,9 @@ public abstract class Equipment : Item
 
     public bool IsEquipped() { return mIsEquipped; }
 
-    public override void UseItem() { mIsEquipped = true; }
+    public void EquipItem() { mIsEquipped = true; }
 
-    public void UnEquip() { mIsEquipped = false; }
+    public void UnEquipItem() { mIsEquipped = false; }
 
     //temp variables, would have to be re-implemented based on player stats format
     protected int mStr;
