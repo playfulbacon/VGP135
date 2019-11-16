@@ -16,7 +16,7 @@ public class HealthPotion : Consumable
         }
     }
 
-    private void Start()
+    public HealthPotion()
     {
         mGrade = ItemGrade.mCommon;
         CalculateDropChance();

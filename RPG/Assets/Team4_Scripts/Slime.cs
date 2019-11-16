@@ -11,7 +11,14 @@ public class Slime : Enemy
 
     protected override void CreateLootTable()
     {
-        mLootTable.Add(new HealthPotion());
+        HealthPotion potion = new HealthPotion();
+        mLootTable.Add(potion);
+
+        Debug.Log("Slime's loot table:");
+        foreach (var item in mLootTable)
+        {
+            Debug.Log(item.GetType().Name);
+        }
     }
 
     private void Start()
@@ -31,6 +38,7 @@ public class Slime : Enemy
     {
         Move();
         mAttackTracker += Time.deltaTime;
+        mCurrentHP--;
     }
 
     private void Update()

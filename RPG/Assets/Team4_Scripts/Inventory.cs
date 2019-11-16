@@ -29,11 +29,23 @@ public class Inventory : MonoBehaviour
                 items.Add(loot);
             }
         }
+        LogItems();
     }
 
     public void UseItem(int index)
     {
         if (index < items.Count)
             items[index].UseItem();
+    }
+    //test function
+    void LogItems()
+    {
+        if(items.Count > 0)
+            Debug.Log("List of looted items added to inventory");
+        foreach (var item in items)
+        {
+            Debug.Log(item.GetType().Name);
+        }
+
     }
 }

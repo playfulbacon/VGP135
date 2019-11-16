@@ -43,7 +43,9 @@ public abstract class Enemy : MonoBehaviour
         if(mCurrentHP <= 0)
         {
             //player.GainEXP(mEXP);
-            //plyaer.GetComponent<Inventory>().AddItemToInventory(LootCalculation());
+            Inventory inven = FindObjectOfType<Inventory>();
+            if (inven != null)
+            inven.AddItemToInventory(LootCalculation());
             Destroy(gameObject);
             Debug.Log("Enemy died");
         }
