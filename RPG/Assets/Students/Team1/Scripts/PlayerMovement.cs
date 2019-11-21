@@ -11,7 +11,12 @@ public class PlayerMovement : MonoBehaviour
 {
     private float speed = 5.0f;
     private NavMeshAgent agent;
+    private bool isMoving;
 
+    // - Getter & Setter -----------------------------------------------------------------------
+    public bool IsMoving{ get { return isMoving; }}
+
+    // - MonoBehavior functions ----------------------------------------------------------------
     void Awake()
     {
         // speed = GetComponent<CharacterStatus>().GetMovementSpeed();
@@ -32,5 +37,9 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        if (Vector3.SqrMagnitude(agent.velocity) > 1.0f)
+            isMoving = true;
+        else
+            isMoving = false;
     }
 }
