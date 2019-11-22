@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    Weapon mEquippedWeapon;
+    Armor mEquippedArmor;
+
     List<Item> items = new List<Item>();
 
     public void AddItemsToInventory(List<Item> loots)
@@ -66,6 +69,8 @@ public class Inventory : MonoBehaviour
             //    player.SetEuippedWeapon(items[index]);
             //    tempWeapon.EquipItem();
             //}
+
+
         }
         else if(index < items.Count && items[index] is Armor)
         {

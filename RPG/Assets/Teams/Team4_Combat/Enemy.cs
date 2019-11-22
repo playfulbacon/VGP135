@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    //protected Player plaer;
+    protected XPBar xpBar;
     protected int mCurrentHP;
     protected int mMaxHP = 100;
     protected int mAttack;
@@ -34,7 +34,7 @@ public abstract class Enemy : MonoBehaviour
     protected void Start()
     {
         mCurrentHP = mMaxHP;
-        //player = FindObjectOfType<Player>();
+        xpBar = FindObjectOfType<XPBar>();
     }
 
     protected void FixedUpdate()
@@ -46,16 +46,14 @@ public abstract class Enemy : MonoBehaviour
     {
         DeathCheck();
     }
-
-    //public int GetEXP() { return mEXP; }
     private void DeathCheck()
     {
         if(mCurrentHP <= 0)
         {
-            //player.GainEXP(mEXP);
+            //xpBar.GainExperience(mEXP);
             Inventory inven = FindObjectOfType<Inventory>();
             if (inven != null)
-            inven.AddItemsToInventory(LootCalculation());
+                inven.AddItemsToInventory(LootCalculation());
             Destroy(gameObject);
             Debug.Log("Enemy died");
         }
