@@ -25,7 +25,7 @@ public class AttackManager : MonoBehaviour
 
     void PlayerAttack()
     {
-        if (closestTarget != null /*&& !player.GetComponent<Move>().IsPlayerMoving(); && attackCooldown > player.GetAttackSpeed()*/)
+        if (closestTarget != null /*&& !player.GetComponent<PlayerMovement>().IsMoving(); && attackCooldown > player.GetAttackSpeed()*/)
         {
             //player.Attack(closestTarget);
             attackCooldown = 0.0f;
@@ -41,6 +41,7 @@ public class AttackManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        GetClosestTarget();
         PlayerAttack();
     }
 }
