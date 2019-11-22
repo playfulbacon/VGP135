@@ -33,6 +33,8 @@ public class Stats : MonoBehaviour
     float maxHealth = 100;
     float currentHealth = 100;
 
+    int leftoverStatPoints = 0;
+
 
     /// Strength Functions ----------------------------------------------------------
     public int GetBaseStrength()
@@ -134,5 +136,15 @@ public class Stats : MonoBehaviour
     void CalculateAttackSpeed()
     {
         attackSpeed = 10 / currentDexterity;
+    }
+
+
+    public int GetStatPointsToSpend()
+    {
+        return leftoverStatPoints;
+    }
+    public void SetNumberStatPointsToSpend(int n)
+    {
+        leftoverStatPoints = n;
     }
 }
