@@ -153,8 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1175011567186883631, guid: 1a18066ff7bd4ac44a59d42a0b677b1c, type: 3}
-  AmountofEn: 0
+  AmountofEn: 100
   SpawnArea: {x: 200, y: 0, z: 200}
+  ArrayOfEn: []
 --- !u!65 &56670039
 BoxCollider:
   m_ObjectHideFlags: 0
