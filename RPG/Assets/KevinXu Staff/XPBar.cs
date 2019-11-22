@@ -62,4 +62,11 @@ public class XPBar : MonoBehaviour
         }
     }
 
+    public GainEXP(float Value)
+    {
+        exprience += Value;
+        CurrentExprience = (float)exprience / (float)exprienceNeededToLevelUp;
+        txtXP.text = string.Format("{0} %", Mathf.RoundToInt(CurrentExprience * 100));
+        ImgXPBar.fillAmount = CurrentExprience;
+    }
 }
