@@ -28,7 +28,6 @@ public class XPBar : MonoBehaviour
         ImgXPBar.fillAmount = CurrentExprience;
 
         txtLevel.text = "Level: " + level.ToString();
-        
     }
 
     // Incease level
