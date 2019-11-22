@@ -36,13 +36,14 @@ public sealed class Slime : Enemy
     void SetRandomDirection()
     {
         mRandomDirection = new Vector3(Random.Range(-5, 5), transform.position.y, Random.Range(-5, 5));
+        mRandomDirection.y = 0;
     }
 
     private void FixedUpdate()
     {
         base.FixedUpdate();
         Move();
-        mCurrentHP--;
+        //mCurrentHP--;
     }
 
     private void Update()
@@ -51,10 +52,9 @@ public sealed class Slime : Enemy
     }
 
 
-    public override void Attack()
+    public override void Attack(Player player)
     {
-        //player.TakeDamage(mAttack);
-
+        player.TakeDamage(mAttack);
     }
 
     public override void Move()
@@ -74,10 +74,10 @@ public sealed class Slime : Enemy
 
     private void OnCollisionStay(Collision collision)
     {
-        //Player player = collison.GetComponent<Player>();
-        if ((mAttackTracker > mAttackCooldown) /* && (player != null)*/)
+        Player player = collision.gameObject.GetComponent<Player>();
+        if (player && (mAttackTracker > mAttackCooldown))
         {
-            //Attack();
+            Attack(player);
             mAttackTracker = 0.0f;
         }
     }

@@ -12,7 +12,7 @@ public abstract class Enemy : MonoBehaviour
     protected float mAttackCooldown;
     protected float mAttackTracker = 0.0f;
 
-    public abstract void Attack();
+    public abstract void Attack(Player player);
     public abstract void Move();
 
     protected List<Item> mLootTable = new List<Item>();

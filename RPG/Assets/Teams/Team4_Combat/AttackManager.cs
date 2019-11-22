@@ -5,38 +5,45 @@ using UnityEngine;
 
 public class AttackManager : MonoBehaviour
 {
-    //Player player;
+    Player player;
     Enemy[] enemies;
     Enemy closestTarget;
     float closestDistance = float.MaxValue;
     float attackCooldown = 0.0f;
+
+    private void Awake()
+    {
+        player = GetComponent<Player>();
+    }
+
+    private void Start()
+    {
+
+    }
+
     public void GetClosestTarget()
     {
         enemies = FindObjectsOfType<Enemy>();
         foreach (Enemy enemy in enemies)
         {
-            //if (Vector3.Distance(player.transform.position, enemy.transform.position) < closestDistance)
-            //{
-            //    closestTarget = enemy;
-            //    closestDistance = Vector3.Distance(player.transform.position, enemy.transform.position);
-            //}
+            float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
+            if (distance < closestDistance)
+            {
+                closestTarget = enemy;
+                closestDistance = distance;
+            }
         }
     }
 
     void PlayerAttack()
     {
-        if (closestTarget != null /*&& !player.GetComponent<PlayerMovement>().IsMoving(); && attackCooldown > player.GetAttackSpeed()*/)
+        if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed())
         {
-            //player.Attack(closestTarget);
+            player.AutoAttack(closestTarget);
             attackCooldown = 0.0f;
         }
         if (attackCooldown < 10f)
             attackCooldown += Time.deltaTime;
-    }
-
-    private void Start()
-    {
-        //player = GetComponent<Player>();
     }
 
     private void FixedUpdate()
