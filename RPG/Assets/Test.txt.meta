@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:RPG/Assets/Test.txt.meta
 guid: 2ff0c775190c4074fa410397bc3d3e4b
+=======
+guid: 224d5afd7a231064f8c4cadc6efa0582
+>>>>>>> b3bc09f42737786b58edce2f728b666572248969:RPG/Library/PackageCache/com.unity.ads@2.0.8/CHANGELOG.md.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 

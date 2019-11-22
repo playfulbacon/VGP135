@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:RPG/Assets/KevinXu Staff/Canvas_HP_MANA_XP_UI.prefab.meta
 guid: f5bdee4060114d743adc060c1ed3a91a
 PrefabImporter:
+=======
+guid: b992c58b9c8af874099e6eb1d483c0ef
+DefaultImporter:
+>>>>>>> b3bc09f42737786b58edce2f728b666572248969:RPG/Assets/Team2/Jaidon/Scene/TestingGround.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
