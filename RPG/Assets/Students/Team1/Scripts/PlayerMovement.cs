@@ -9,6 +9,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
     private float speed = 5.0f;
     private NavMeshAgent agent;
     private bool isMoving;
@@ -37,9 +38,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Vector3.SqrMagnitude(agent.velocity) > 1.0f)
-            isMoving = true;
-        else
-            isMoving = false;
+        isMoving = Vector3.SqrMagnitude(agent.velocity) > 1.0f;
     }
 }
