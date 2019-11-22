@@ -10,10 +10,11 @@ public class XPBar : MonoBehaviour
     public float CurrentExprience;
 
     public int exprienceNeededToLevelUp;
-
     public Image ImgXPBar;
     public Text txtXP;
     public Text txtLevel;
+
+    public LevelUpMenu myMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +28,7 @@ public class XPBar : MonoBehaviour
         ImgXPBar.fillAmount = CurrentExprience;
 
         txtLevel.text = "Level: " + level.ToString();
+        
     }
 
     // Incease level
@@ -41,6 +43,9 @@ public class XPBar : MonoBehaviour
 
         level += 1;
         txtLevel.text = "Level: " + level.ToString();
+
+        
+        myMenu.LevelUpMenuActivate();
 
     }
 
