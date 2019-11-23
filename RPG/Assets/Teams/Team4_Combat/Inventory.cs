@@ -10,36 +10,70 @@ public class Inventory : MonoBehaviour
 
     List<Item> items = new List<Item>();
 
-    GridLayoutGroup grid;
-
     public GameObject mConsumablePrefab;
-    public GameObject mWeaponPrefab;
-    public GameObject mArmorPrefab;
+    public GameObject mEquipmentPrefab;
+    Sprite weaponImage;
+    Sprite armorImage;
+
+    GameObject[] inventoryItems;
 
     private void Awake()
     {
-        grid = GetComponent<GridLayoutGroup>();
+        weaponImage = Resources.Load<Sprite>("sword");
+        armorImage = Resources.Load<Sprite>("armor");
+        inventoryItems = new GameObject[items.Count];
     }
+
+    public int GetEquippedWeaponAttack() { return mEquippedWeapon.GetWeaponAttack(); }
+    public int GetEquippedArmorDefense() { return mEquippedArmor.GetArmorDefense(); }
 
     void GenerateInventoryIcons()
     {
-        GameObject itemSlot;
-
+        foreach (var item in inventoryItems)
+        {
+            Destroy(item);
+        }
+        inventoryItems = new GameObject[items.Count];
+        int count = 0;
         foreach (var item in items)
         {
             if(item is Consumable)
             {
-                itemSlot = (GameObject)Instantiate(mConsumablePrefab, transform);
-                
+                inventoryItems[count] = Instantiate(mConsumablePrefab, transform);
+                Consumable tempItem = item as Consumable;
+                inventoryItems[count].GetComponentInChildren<Text>().text = "X" + tempItem.GetItemCount();
+
+                inventoryItems[count].GetComponent<ConsumableSlot>().mID = count++;
             }
-            else if(item is Weapon)
+            else if(item is Equipment)
             {
-                itemSlot = (GameObject)Instantiate(mWeaponPrefab, transform);
+                inventoryItems[count] = Instantiate(mEquipmentPrefab, transform);
+                if (item is Weapon)
+                {
+                    inventoryItems[count].GetComponentInChildren<Image>().sprite = weaponImage;
+                    EquipmentCompare(item, count);
+                }
+                else if (item is Armor)
+                {
+                    inventoryItems[count].GetComponentInChildren<Image>().sprite = armorImage;
+                    EquipmentCompare(item, count);
+                }
+                inventoryItems[count].GetComponent<EquipmentSlot>().mID = count++;
             }
-            else if(item is Armor)
-            {
-                itemSlot = (GameObject)Instantiate(mArmorPrefab, transform);
-            }
+        }
+    }
+
+    private void EquipmentCompare(Item item, int index)
+    {
+        Equipment equip = item as Equipment;
+        Text text = inventoryItems[index].GetComponentInChildren<Text>();
+        if (ReferenceEquals(equip, mEquippedWeapon) || ReferenceEquals(equip, mEquippedArmor))
+        {
+            text.text = "Equipped";
+        }
+        else
+        {
+            text.text = "";
         }
     }
 
@@ -49,7 +83,6 @@ public class Inventory : MonoBehaviour
         {
             AddItem(loot);
         }
-        LogItems();
         GenerateInventoryIcons();
     }
 
@@ -79,81 +112,44 @@ public class Inventory : MonoBehaviour
     {
         if (index < items.Count && items[index] is Consumable)
         {
-            items[index].GetComponent<Consumable>().UseItem();
-            if(items[index].GetComponent<Consumable>().GetItemCount() == 0)
+            Consumable selectedItem = items[index] as Consumable;
+            selectedItem.UseItem();
+            if(selectedItem.GetItemCount() == 0)
             {
                 items.Remove(items[index]);
             }
         }
+        GenerateInventoryIcons();
     }
 
     public void EquipItem(int index)
     {
-        if (index < items.Count && items[index] is Weapon)
+        Item selectedItem = items[index];
+        if (index < items.Count && selectedItem is Weapon)
         {
-            //var tempWeapon = items[index] as Weapon;
-            //Player player = GetComponent<Player>();
-            //if(player.GetEquippedWeapon() == null)
-            //{
-            //    player.SetEuippedWeapon(items[index]);
-            //    tempWeapon.EquipItem();
-            //}
-            //else if(player.GetEquippedWeapon() != items[index])
-            //{
-            //    player.GetEquippedWeapon().UnequipItem();
-            //    player.SetEuippedWeapon(items[index]);
-            //    tempWeapon.EquipItem();
-            //}
-
+            mEquippedWeapon = (Weapon)selectedItem;
+            Debug.Log(mEquippedWeapon.GetWeaponAttack());
 
         }
         else if(index < items.Count && items[index] is Armor)
         {
-            //var tempArmor = items[index] as Armor;
-            //Player player = GetComponent<Player>();
-            //if (player.GetEquippedArmor() == null)
-            //{
-            //    player.SetEuippedArmor(items[index]);
-            //    tempArmor.EquipItem();
-            //}
-            //else if (player.GetEquippedArmor() != items[index])
-            //{
-            //    player.GetEquippedArmor().UnequipItem();
-            //    player.SetEuippedArmor(items[index]);
-            //    tempArmor.EquipItem();
-            //}
+            mEquippedArmor = (Armor)selectedItem;
+            Debug.Log(mEquippedArmor.GetArmorDefense());
         }
-
+        GenerateInventoryIcons();
     }
 
     public void UnEquipItem(int index)
     {
-        if (index < items.Count && items[index] is Equipment)
+        Item selectedItem = items[index];
+        if (index < items.Count && ReferenceEquals(selectedItem, mEquippedWeapon))
         {
-            var tempEquip = items[index] as Equipment;
-            if (tempEquip.IsEquipped())
-                tempEquip.UnEquipItem();
+            mEquippedWeapon = null;
         }
-    }
-
-
-    //test function
-    void LogItems()
-    {
-        if(items.Count > 0)
-            Debug.Log("List of looted items added to inventory");
-        foreach (var item in items)
+        else if(index < items.Count && ReferenceEquals(selectedItem, mEquippedArmor))
         {
-            if (item is Consumable)
-            {
-                var tempItem = item as Consumable;
-                Debug.Log(tempItem.GetType().Name + "X" + tempItem.GetItemCount());
-            }
-            else
-            {
-                Debug.Log(item.GetType().Name);
-            }
+            mEquippedArmor = null;
         }
-
+        GenerateInventoryIcons();
     }
 }
