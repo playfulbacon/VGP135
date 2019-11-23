@@ -24,8 +24,20 @@ public class Inventory : MonoBehaviour
         inventoryItems = new GameObject[items.Count];
     }
 
-    public int GetEquippedWeaponAttack() { return mEquippedWeapon.GetWeaponAttack(); }
-    public int GetEquippedArmorDefense() { return mEquippedArmor.GetArmorDefense(); }
+    public int GetEquippedWeaponAttack()
+    {
+        if (mEquippedWeapon)
+            return mEquippedWeapon.GetWeaponAttack();
+        else
+            return 0;
+    }
+    public int GetEquippedArmorDefense()
+    {
+        if (mEquippedArmor)
+            return mEquippedArmor.GetArmorDefense();
+        else
+            return 0;
+    }
 
     void GenerateInventoryIcons()
     {

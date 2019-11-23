@@ -11,7 +11,6 @@ public enum ItemGrade
 
 public abstract class Item : MonoBehaviour
 {
-    //default item grade to common unless otherwise specified
     protected ItemGrade mGrade;
     protected int mDropChance;
 
