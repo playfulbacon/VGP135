@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -9,6 +10,39 @@ public class Inventory : MonoBehaviour
 
     List<Item> items = new List<Item>();
 
+    GridLayoutGroup grid;
+
+    public GameObject mConsumablePrefab;
+    public GameObject mWeaponPrefab;
+    public GameObject mArmorPrefab;
+
+    private void Awake()
+    {
+        grid = GetComponent<GridLayoutGroup>();
+    }
+
+    void GenerateInventoryIcons()
+    {
+        GameObject itemSlot;
+
+        foreach (var item in items)
+        {
+            if(item is Consumable)
+            {
+                itemSlot = (GameObject)Instantiate(mConsumablePrefab, transform);
+                
+            }
+            else if(item is Weapon)
+            {
+                itemSlot = (GameObject)Instantiate(mWeaponPrefab, transform);
+            }
+            else if(item is Armor)
+            {
+                itemSlot = (GameObject)Instantiate(mArmorPrefab, transform);
+            }
+        }
+    }
+
     public void AddItemsToInventory(List<Item> loots)
     {
         foreach (var loot in loots)
@@ -16,6 +50,7 @@ public class Inventory : MonoBehaviour
             AddItem(loot);
         }
         LogItems();
+        GenerateInventoryIcons();
     }
 
     private void AddItem(Item loot)

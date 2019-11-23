@@ -43,7 +43,7 @@ public sealed class Slime : Enemy
     {
         base.FixedUpdate();
         Move();
-        //mCurrentHP--;
+        mCurrentHP--;
     }
 
     private void Update()
