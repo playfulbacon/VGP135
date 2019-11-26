@@ -273,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676722505}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -1.8709449, y: 16.2, z: -10.882052}
+  m_LocalPosition: {x: -0.61, y: 15.6, z: -11.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -291,8 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91255881468d3be4fb123a60cc6ae0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 714839968}
-  followSpeed: 5
+  player: {fileID: 714839973}
 --- !u!1 &714839968
 GameObject:
   m_ObjectHideFlags: 0
