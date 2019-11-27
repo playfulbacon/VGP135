@@ -45,4 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mModelDatas:
   - mName: Ranger
-    mAnimator: {fileID: 0}
+    mAnimationController: {fileID: 9100000, guid: f09fa02f36486d34bb74034d32107c38,
+      type: 2}

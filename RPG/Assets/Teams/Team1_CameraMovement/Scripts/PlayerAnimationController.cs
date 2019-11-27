@@ -6,12 +6,16 @@ using UnityEditor.Animations;
 
 public class PlayerAnimationController : MonoBehaviour
 {
+    private Player mPlayer;
     private Animator mAnimator;
     private PlayerMovement mPlayerMovment;
     private float mDefaultAttakSpeed;
 
     private void Awake()
     {
+        mPlayer = GetComponent<Player>();
+        Assert.IsNotNull(mPlayer, "[PlayerAnimationController]--- mPlayer is null");
+
         mAnimator = GetComponentInChildren<Animator>();
         Assert.IsNotNull(mAnimator, "[PlayerAnimationController]--- mAnimatorController is null");
         mAnimator.runtimeAnimatorController = FindObjectOfType<ModelManager>().GetAnimator(GetComponentInChildren<ClassGetter>().PlayerClass);
@@ -34,12 +38,15 @@ public class PlayerAnimationController : MonoBehaviour
             }
         }
         Debug.Log(mDefaultAttakSpeed);
+        
+        
 
     }
     // Update is called once per frame
     void Update()
     {
         mAnimator.SetFloat("speed", mPlayerMovment.Agent.velocity.magnitude);
+        UpdateAttackAnimationSpeed_mutiplier(mPlayer.GetAttackSpeed());
     }
 
     void LateUpdate()
@@ -54,6 +61,6 @@ public class PlayerAnimationController : MonoBehaviour
 
     public void UpdateAttackAnimationSpeed_mutiplier(float newAttackSpeed)
     {
-        mAnimator.SetFloat("attackSpeed", newAttackSpeed / mDefaultAttakSpeed);
+        mAnimator.SetFloat("attackSpeedMutiplier", mDefaultAttakSpeed / newAttackSpeed );
     }
 }
