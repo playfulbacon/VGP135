@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = 5.0f;
     [SerializeField]
-    private float rotationSpeed = 5.0f;
+    private float rotationSpeed = 20.0f;
     private NavMeshAgent agent;
     private bool isMoving;
 
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
             //RotateTowards(currentTarget.transform);                       //|
     }
 
-    private void RotateTowards(Transform target)
+    public void RotateTowards(Transform target)
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(direction);
