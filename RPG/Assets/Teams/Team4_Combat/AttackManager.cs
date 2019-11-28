@@ -40,6 +40,8 @@ public class AttackManager : MonoBehaviour
         if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed())
         {
             player.AutoAttack(closestTarget);
+            //GetComponent<PlayerAnimationController>().SetAttackAnimation();
+            //GetComponent<PlayerMovement>().RotateTowards(closestTarget.transform);
             attackCooldown = 0.0f;
         }
         if (attackCooldown < 10f)
