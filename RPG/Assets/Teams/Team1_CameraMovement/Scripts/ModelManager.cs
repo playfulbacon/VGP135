@@ -19,12 +19,10 @@ public class ModelManager : MonoBehaviour
     {
         if (charactorClass == ClassGetter.CharactorClass.None)
         {
-            Debug.Log("[ModelManager]--- None ClassType detected. Player gameObject may not have any class scrpit");
             return mModelDatas[0];
         }
         else
         {
-            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!" + (int)charactorClass);
             return mModelDatas[(int)charactorClass];
         }
     }

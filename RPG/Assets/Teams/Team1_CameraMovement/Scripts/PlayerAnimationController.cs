@@ -41,15 +41,13 @@ public class PlayerAnimationController : MonoBehaviour
             }
         }
         Debug.Log(mDefaultAttakSpeed);
-        
-        
 
+        UpdateAttackAnimationSpeed_mutiplier(mPlayer.GetAttackSpeed());
     }
-    // Update is called once per frame
+
     void Update()
     {
-        mAnimator.SetFloat("speed", mPlayerMovment.Agent.velocity.magnitude);
-        UpdateAttackAnimationSpeed_mutiplier(mPlayer.GetAttackSpeed());
+        mAnimator.SetFloat("speed", mPlayerMovment.Agent.velocity.magnitude);   
     }
 
     public void SetAttackAnimation()

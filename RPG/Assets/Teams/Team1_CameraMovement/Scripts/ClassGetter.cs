@@ -16,7 +16,6 @@ public class ClassGetter : MonoBehaviour
 
     public CharactorClass PlayerClass { get { return mPlayerClass; }}
 
-
     void Awake()
     {
         if (GetComponent<Ranger>() != null)

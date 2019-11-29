@@ -41,7 +41,6 @@ public class AttackDelayModule : MonoBehaviour
 
         if ((mShootDelayCounter > mAnimationController.GetShootDelay()) && (mPlayerMovment.Agent.velocity.sqrMagnitude == 0.0f))
         {   
-
             mPlayer.AutoAttack(mTarget);
             mShootDelayCounter = 0.0f;
             mIsShooting = false;
