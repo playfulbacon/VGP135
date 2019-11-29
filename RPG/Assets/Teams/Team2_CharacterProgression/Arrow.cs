@@ -7,6 +7,7 @@ public class Arrow : MonoBehaviour
     GameObject target;
     public GameObject Target { set { target = value; } }
     public float moveSpeed = 10.0f;
+    public int damage;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +18,11 @@ public class Arrow : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        Debug.Log("Enemy Hit");
+
+        Enemy enemy = other.GetComponentInParent<Enemy>();
+        if (enemy)
+        {
+            enemy.TakeDamage(damage);
+        }
     }
 }
