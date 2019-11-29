@@ -802,7 +802,7 @@ MonoBehaviour:
   ImgXPBar: {fileID: 7998307491950914608}
   txtXP: {fileID: 7998307490127157352}
   txtLevel: {fileID: 7998307491263871128}
-  myMenu: {fileID: 0}
+  myMenu: {fileID: 5682629928002114880, guid: 4b10ad3fe43c2a94e872db24a24626b5, type: 3}
 --- !u!1 &7998307491486036580
 GameObject:
   m_ObjectHideFlags: 0
