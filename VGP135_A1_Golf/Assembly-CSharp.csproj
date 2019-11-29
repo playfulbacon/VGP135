@@ -63,6 +63,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Aimer.cs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    <Compile Include="Assets\Launch.cs" />
+>>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
+=======
+>>>>>>> 9e0a4bd911a86d3d8e4aa09420a1606b08586cd0
     <Compile Include="Assets\LevelSelectSetup.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\BallHealth.cs" />
@@ -82,10 +89,15 @@
     <Compile Include="Assets\Students\FlavioStuff\ResetLevel.cs" />
     <Compile Include="Assets\Students\FlavioStuff\SideWaysMovement.cs" />
     <Compile Include="Assets\Students\FlavioStuff\SpringMovement.cs" />
+    <Compile Include="Assets\Students\Jaidon\Scripts\Whirly.cs" />
     <Compile Include="Assets\Students\JohnWuTest\Attach.cs" />
     <Compile Include="Assets\Students\JohnWuTest\DeathZone.cs" />
     <Compile Include="Assets\Students\Justin_Tim_1840457\Ball2.cs" />
     <Compile Include="Assets\Students\JustinQuestroo\BouncePad.cs" />
+    <Compile Include="Assets\Students\KevinXu\BallKevinXu.cs" />
+    <Compile Include="Assets\Students\KevinXu\fail.cs" />
+    <Compile Include="Assets\Students\KevinXu\FailMenu.cs" />
+    <Compile Include="Assets\Students\KevinXu\Touched.cs" />
     <Compile Include="Assets\Students\LichengZhou\GoalableObject.cs" />
     <Compile Include="Assets\Students\LichengZhou\LichengBall.cs" />
     <Compile Include="Assets\Students\MingzhuoZhang\Mingzhuo_MovingCube.cs" />
@@ -99,22 +111,60 @@
     <Compile Include="Assets\Students\William\Shrink.cs" />
     <None Include="Assets\Students\AndyBacon\Key\readME keys.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+=======
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+>>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
+=======
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+>>>>>>> 9e0a4bd911a86d3d8e4aa09420a1606b08586cd0
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -300,13 +350,31 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+=======
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+>>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/1840549/Desktop/golf/VGP135/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+<<<<<<< HEAD
+      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+=======
+      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+>>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
+=======
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.StandardEvents">
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Analytics.Tracker">
+      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+>>>>>>> 9e0a4bd911a86d3d8e4aa09420a1606b08586cd0
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

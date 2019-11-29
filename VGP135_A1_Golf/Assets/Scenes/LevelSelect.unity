@@ -1388,6 +1388,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 4127051947828859646, guid: ce4dc792537f80b40ad94c196b94b65a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 59471596}
     - target: {fileID: 4127051947164865444, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1418,11 +1423,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 150
       objectReference: {fileID: 0}
-    - target: {fileID: 4127051947828859646, guid: ce4dc792537f80b40ad94c196b94b65a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 59471596}
     - target: {fileID: 4127051947164865445, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
