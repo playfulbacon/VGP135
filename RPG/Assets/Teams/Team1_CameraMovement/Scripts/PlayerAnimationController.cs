@@ -6,6 +6,7 @@ using UnityEditor.Animations;
 
 public class PlayerAnimationController : MonoBehaviour
 {
+    private ModelManager.ClassModelData mModelData;
     private Player mPlayer;
     private Animator mAnimator;
     private PlayerMovement mPlayerMovment;
@@ -18,7 +19,8 @@ public class PlayerAnimationController : MonoBehaviour
 
         mAnimator = GetComponentInChildren<Animator>();
         Assert.IsNotNull(mAnimator, "[PlayerAnimationController]--- mAnimatorController is null");
-        mAnimator.runtimeAnimatorController = FindObjectOfType<ModelManager>().GetAnimator(GetComponentInChildren<ClassGetter>().PlayerClass);
+        mModelData = FindObjectOfType<ModelManager>().GetModelData(GetComponentInChildren<ClassGetter>().PlayerClass);
+        mAnimator.runtimeAnimatorController = mModelData.mAnimationController;
 
         var mAnimatorController = mAnimator.runtimeAnimatorController as AnimatorController;
         Assert.IsNotNull(mAnimatorController, "[PlayerAnimationController]--- mAnimatorController is null");
@@ -49,18 +51,23 @@ public class PlayerAnimationController : MonoBehaviour
         UpdateAttackAnimationSpeed_mutiplier(mPlayer.GetAttackSpeed());
     }
 
-    void LateUpdate()
-    {
-        mAnimator.SetInteger("state", 0);
-    }
-
     public void SetAttackAnimation()
     {
         mAnimator.SetInteger("state", 1);
     }
 
+    public void SetIdleAnimation()
+    {
+        mAnimator.SetInteger("state", 0);
+    }
+
     public void UpdateAttackAnimationSpeed_mutiplier(float newAttackSpeed)
     {
         mAnimator.SetFloat("attackSpeedMutiplier", mDefaultAttakSpeed / newAttackSpeed );
+    }
+
+    public float GetShootDelay()
+    {
+        return mModelData.mShootDelay * mPlayer.GetAttackSpeed();
     }
 }

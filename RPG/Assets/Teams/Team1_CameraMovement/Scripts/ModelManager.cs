@@ -10,20 +10,21 @@ public class ModelManager : MonoBehaviour
     {
         public string mName;
         public RuntimeAnimatorController mAnimationController;
+        public float mShootDelay;
     }
 
     public ClassModelData[] mModelDatas = new ClassModelData[1];
 
-    public RuntimeAnimatorController GetAnimator(ClassGetter.CharactorClass charactorClass)
+    public ClassModelData GetModelData(ClassGetter.CharactorClass charactorClass)
     {
         if (charactorClass == ClassGetter.CharactorClass.None)
         {
             Debug.Log("[ModelManager]--- None ClassType detected. Player gameObject may not have any class scrpit");
-            return mModelDatas[0].mAnimationController;
+            return mModelDatas[0];
         }
         else
         {
-            return mModelDatas[(int)charactorClass].mAnimationController;
+            return mModelDatas[(int)charactorClass];
         }
     }
 }

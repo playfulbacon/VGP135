@@ -53,9 +53,10 @@ public class CustomAnimationControllerCreator : MonoBehaviour
         attack_to_run_Transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Greater, 1.0f, "speed");   //|--- attack --> others
         attack_to_run_Transition.duration = 0.2f;                                                                     //|
                                                                                                                       //|
-        var attack_to_attack_Transition = state_attack.AddTransition(state_attack, false);                            //|
+        var attack_to_attack_Transition = state_attack.AddTransition(state_attack, true);                             //|
         attack_to_attack_Transition.AddCondition(UnityEditor.Animations.AnimatorConditionMode.Equals, 1, "state");    //|
-        attack_to_attack_Transition.duration = 0.2f;                                                                  //|
+        attack_to_attack_Transition.exitTime = 1.0f;                                                                  //|
+        attack_to_attack_Transition.duration = 0.0f;                                                                  //|
         // -----------------------------------------------------------------------------------------------------------//|
 
         // -----------------------------------------------------------------------------------------------------------//|

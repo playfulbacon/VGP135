@@ -42,10 +42,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         isMoving = Vector3.SqrMagnitude(agent.velocity) > 1.0f;
-
-        //Enemy currentTarget = AttackManager.GetCurrentTarget();           //|
-        //if (currentTarget)                                                //|--- TODO:: Ask team 4 to provid this function
-            //RotateTowards(currentTarget.transform);                       //|
     }
 
     public void RotateTowards(Transform target)
