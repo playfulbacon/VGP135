@@ -465,6 +465,11 @@ PrefabInstance:
       propertyPath: spawnRange.z
       value: 23.4
       objectReference: {fileID: 0}
+    - target: {fileID: 5258126126767961167, guid: 4a7ce438d4d65ca43bb4ab7c24aa639b,
+        type: 3}
+      propertyPath: terrain
+      value: 
+      objectReference: {fileID: 410426703}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a7ce438d4d65ca43bb4ab7c24aa639b, type: 3}
 --- !u!1 &1768311679
