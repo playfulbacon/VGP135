@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         print("take damage");
+        stats.TakeDamage(damage);
     }
 
     public float GetAttackSpeed()

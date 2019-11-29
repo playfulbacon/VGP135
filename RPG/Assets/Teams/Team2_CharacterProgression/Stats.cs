@@ -36,6 +36,37 @@ public class Stats : MonoBehaviour
 
     int leftoverStatPoints = 0;
 
+    //William heal function
+    public void Heal(int healAmount)
+    {
+        if ((healAmount + currentHealth) > maxHealth)
+            currentHealth = maxHealth;
+        else
+            currentHealth += healAmount;
+        Debug.Log("player has been healed by " + healAmount);
+    }
+    //William Get defense power
+    public int GetDefensePower()
+    {
+        int armorDefense = FindObjectOfType<Inventory>().GetEquippedArmorDefense();
+        return armorDefense;
+    }
+    //William Get Attack power
+    public int GetAttackPower()
+    {
+        int weaponAttack = FindObjectOfType<Inventory>().GetEquippedWeaponAttack();
+        return (int)physicalDamage + weaponAttack;
+    }
+    // William take damage
+    public void TakeDamage(int damage)
+    {
+        if (damage > GetDefensePower())
+            currentHealth -= (damage - GetDefensePower());
+        else
+            Debug.Log("The attack did go through player's armor");
+    }
+
+
 
     /// Strength Functions ----------------------------------------------------------
     public int GetBaseStrength()

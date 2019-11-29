@@ -9,8 +9,8 @@ public abstract class Enemy : MonoBehaviour
     protected int mMaxHP = 100;
     protected int mAttack;
     protected int mEXP;
-    protected float mAttackCooldown;
-    protected float mAttackTracker = 0.0f;
+    public float mAttackCooldown;
+    public float mAttackTracker = 0.0f;
 
     public abstract void Attack(Player player);
     public abstract void Move();
@@ -39,7 +39,8 @@ public abstract class Enemy : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        mAttackTracker += Time.deltaTime;
+        if(mAttackTracker < mAttackCooldown)
+            mAttackTracker += Time.deltaTime;
     }
 
     protected void Update()
@@ -56,6 +57,9 @@ public abstract class Enemy : MonoBehaviour
                 inven.AddItemsToInventory(LootCalculation());
             Destroy(gameObject);
             Debug.Log("Enemy died");
+            AttackManager atk = FindObjectOfType<AttackManager>();
+            if (atk)
+                atk.ResetClosestDistance();
         }
     }
 

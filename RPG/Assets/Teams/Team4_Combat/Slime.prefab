@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5368957815824702274}
   - component: {fileID: 5368957815824702277}
   - component: {fileID: 5510152016197527288}
+  - component: {fileID: 3308396528220851558}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -67,6 +68,19 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &3308396528220851558
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5368957815824702276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5368957817094597365
 GameObject:
   m_ObjectHideFlags: 0

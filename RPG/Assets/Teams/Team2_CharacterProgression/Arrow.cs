@@ -13,16 +13,21 @@ public class Arrow : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        damage = FindObjectOfType<Stats>().GetAttackPower();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-
-        Enemy enemy = other.GetComponentInParent<Enemy>();
-        if (enemy)
+        Player player = other.GetComponent<Player>();
+        if(!player)
         {
-            enemy.TakeDamage(damage);
+            Destroy(gameObject);
+
+            Enemy enemy = other.GetComponentInParent<Enemy>();
+            if (enemy)
+            {
+                enemy.TakeDamage(damage);
+            }
         }
     }
 }

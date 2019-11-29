@@ -21,6 +21,11 @@ public class AttackManager : MonoBehaviour
 
     }
 
+    public void ResetClosestDistance()
+    {
+        closestDistance = float.MaxValue;
+    }
+
     public void GetClosestTarget()
     {
         enemies = FindObjectsOfType<Enemy>();
@@ -47,9 +52,12 @@ public class AttackManager : MonoBehaviour
             attackCooldown += Time.deltaTime;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         GetClosestTarget();
+    }
+    private void FixedUpdate()
+    { 
         PlayerAttack();
     }
 }

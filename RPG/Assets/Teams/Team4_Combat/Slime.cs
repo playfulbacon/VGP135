@@ -92,11 +92,13 @@ public sealed class Slime : Enemy
             yield return null;
         }
     }
-    private void OnCollisionStay(Collision collision)
+
+    private void OnTriggerStay(Collider other)
     {
-        Player player = collision.gameObject.GetComponent<Player>();
+        Player player = other.gameObject.GetComponent<Player>();
         if (player && (mAttackTracker > mAttackCooldown))
         {
+            Debug.Log("player hit by slime");
             Attack(player);
             mAttackTracker = 0.0f;
         }
