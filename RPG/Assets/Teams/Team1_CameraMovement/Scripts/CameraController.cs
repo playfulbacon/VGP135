@@ -4,28 +4,19 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    //public GameObject objectToFollow;
-    //public float followSpeed = 5f;
-
-    public Transform player;
-
-    private Transform myTransform;
-    private Vector3 offset = Vector3.zero;
+    public GameObject objectToFollow;
+    public float followSpeed = 5f;
 
     void Start()
     {
-        //if (objectToFollow == null)
-        //    objectToFollow = FindObjectOfType<PlayerMovement>().gameObject;
-
-        myTransform = transform;
-        offset = player.position + myTransform.position;
+        if (objectToFollow == null)
+            objectToFollow = FindObjectOfType<PlayerMovement>().gameObject;
     }
 
     void Update()
     {
-        //Vector3 targetPosition = objectToFollow.transform.position;
-        //Vector3 newPosition = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
-        //transform.position = new Vector3(newPosition.x, transform.position.y, newPosition.z);
-        myTransform.position = player.position + offset;
+        Vector3 targetPosition = objectToFollow.transform.position;
+        Vector3 newPosition = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
+        transform.position = new Vector3(newPosition.x, transform.position.y, newPosition.z);
     }
 }

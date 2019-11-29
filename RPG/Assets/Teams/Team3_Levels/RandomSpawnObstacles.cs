@@ -11,12 +11,11 @@ public class RandomSpawnObstacles : MonoBehaviour
     public Vector3 spawnRange;
     public uint obstaclesInLevelCount;
     public bool drawDebugLines;
-    public bool spawnObstaclesOnStart;
 
+    // Start is called before the first frame update
     void Start()
     {
-        if (spawnObstaclesOnStart)
-            SpawnObstacles(obstaclesInLevelCount);
+
     }
 
     public void SpawnObstacles(uint count) // Count : How many obstacles to spawn
@@ -34,7 +33,7 @@ public class RandomSpawnObstacles : MonoBehaviour
             index = Random.Range(0, obstacleInventory.Length);
 
             spawnPosition = new Vector3(Random.Range(-spawnRange.x/2 + obstacleWidth, spawnRange.x/2 - obstacleWidth),
-                                               terrain.transform.position.y + (obstacleHeight/2),
+                                               terrain.transform.position.y + obstacleHeight,
                                                Random.Range(-spawnRange.z/2 + obstacleWidth, spawnRange.z/2 - obstacleWidth));
 
 

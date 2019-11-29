@@ -39,8 +39,7 @@ public class AttackManager : MonoBehaviour
     {
         if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed())
         {
-            //player.AutoAttack(closestTarget);
-            GetComponent<AttackDelayModule>().AttackWithDelay(closestTarget);
+            player.AutoAttack(closestTarget);
             attackCooldown = 0.0f;
         }
         if (attackCooldown < 10f)
