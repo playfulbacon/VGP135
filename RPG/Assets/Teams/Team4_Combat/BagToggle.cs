@@ -13,7 +13,6 @@ public class BagToggle : MonoBehaviour
         isBagOpen = true;
         toggleX = 1500;
         ToggleBag();
-        transform.Translate(new Vector3(0f, -150f, 0f));
     }
 
     public void ToggleBag()
