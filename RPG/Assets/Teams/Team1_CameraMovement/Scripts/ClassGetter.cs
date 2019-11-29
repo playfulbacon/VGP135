@@ -8,7 +8,7 @@ public class ClassGetter : MonoBehaviour
     {
         None = -1,
         Ranger = 0,
-        //Assassin = 1,
+        Wizard = 1,
         //Mage = 2
     }
 
@@ -21,8 +21,8 @@ public class ClassGetter : MonoBehaviour
     {
         if (GetComponent<Ranger>() != null)
             mPlayerClass = CharactorClass.Ranger;
-        //else if (GetComponent<Assassin>() != null)
-        //    mPlayerClass = CharactorClass.Assassin;
+        //else if (GetComponent<Wizard>() != null)
+        //    mPlayerClass = CharactorClass.Wizard;
         //else if (GetComponent<Mage>() != null)
         //    mPlayerClass = CharactorClass.Mage;
     }

@@ -12,17 +12,18 @@ public class PlayerAnimationController : MonoBehaviour
     private PlayerMovement mPlayerMovment;
     private float mDefaultAttakSpeed;
 
-    private void Awake()
+    private void Start()
     {
         mPlayer = GetComponent<Player>();
         Assert.IsNotNull(mPlayer, "[PlayerAnimationController]--- mPlayer is null");
+        mModelData = FindObjectOfType<ModelManager>().GetModelData(GetComponentInChildren<ClassGetter>().PlayerClass);
+
+        Instantiate(mModelData.mModelTPos, mPlayer.transform);
 
         mAnimator = GetComponentInChildren<Animator>();
         Assert.IsNotNull(mAnimator, "[PlayerAnimationController]--- mAnimatorController is null");
-        mModelData = FindObjectOfType<ModelManager>().GetModelData(GetComponentInChildren<ClassGetter>().PlayerClass);
-        mAnimator.runtimeAnimatorController = mModelData.mAnimationController;
 
-        var mAnimatorController = mAnimator.runtimeAnimatorController as AnimatorController;
+         var mAnimatorController = mAnimator.runtimeAnimatorController as AnimatorController;
         Assert.IsNotNull(mAnimatorController, "[PlayerAnimationController]--- mAnimatorController is null");
         mPlayerMovment = GetComponentInChildren<PlayerMovement>();
         Assert.IsNotNull(mPlayerMovment, "[PlayerAnimationController]--- mPlayer is null");

@@ -9,11 +9,11 @@ public class ModelManager : MonoBehaviour
     public struct ClassModelData
     {
         public string mName;
-        public RuntimeAnimatorController mAnimationController;
+        public GameObject mModelTPos;
         public float mShootDelay;
     }
 
-    public ClassModelData[] mModelDatas = new ClassModelData[1];
+    public ClassModelData[] mModelDatas;
 
     public ClassModelData GetModelData(ClassGetter.CharactorClass charactorClass)
     {
@@ -24,6 +24,7 @@ public class ModelManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!" + (int)charactorClass);
             return mModelDatas[(int)charactorClass];
         }
     }

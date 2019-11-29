@@ -45,5 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mModelDatas:
   - mName: Ranger
-    mAnimationController: {fileID: 9100000, guid: f09fa02f36486d34bb74034d32107c38,
-      type: 2}
+    mModelTPos: {fileID: 204503421711581957, guid: ce4f7f2a486d6154fa0669df0f5a88e2,
+      type: 3}
+    mShootDelay: 0.7
+  - mName: Wizard
+    mModelTPos: {fileID: 3742135131878509690, guid: 1afe89ee060ca0c41a5a14ad6d7337d7,
+      type: 3}
+    mShootDelay: 0.7
