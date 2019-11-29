@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Gateway : InteractableObj
 {
-    bool presetlevel = false;
+    public bool presetlevel = false;
     bool playerIsHere = false;
     public bool isActive = true;
     public string[] presetScenes = new string[10];
-
+    public GameObject testWatchObj;
     SceneManager sceneManager;
     public override void Interact(KeyCode input)
     {
@@ -18,6 +18,7 @@ public class Gateway : InteractableObj
 
     public override void IsTouching(GameObject obj)
     {
+        testWatchObj = obj;
         if (isActive) //Load new level when player touching the gateway while it's activated
         {
             if (obj.CompareTag("Player") || obj.CompareTag("player"))
