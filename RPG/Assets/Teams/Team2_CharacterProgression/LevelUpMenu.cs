@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+enum StatAdded
+{
+    Str,
+    Int,
+    Con,
+    Dex,
+    Wis
+};
+
 public class LevelUpMenu : MonoBehaviour
 {
     public GameObject player;
@@ -10,21 +19,14 @@ public class LevelUpMenu : MonoBehaviour
 
     public static bool isPausedForLevelUp = false;
 
-    public Text strengthText;
-    public Text intelligenceText;
-    public Text constitutionText;
-    public Text dexterityText;
-    public Text wisdomText;
-
     public Text addStrength;
     public Text addIntelligence;
     public Text addConstitution;
     public Text addDexterity;
     public Text addWisdom;
 
-    public Text pointsToSpend;
-    int numberPointsToSpend;
-    int pointsLeft;
+    bool hasPoint = false;
+    StatAdded pointSpend = StatAdded.Str;
 
     private void Start()
     {
@@ -33,7 +35,8 @@ public class LevelUpMenu : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        /// Debug Purposes
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             LevelUpMenuActivate();
         }
@@ -42,107 +45,77 @@ public class LevelUpMenu : MonoBehaviour
     public void LevelUpMenuActivate()
     {
         Time.timeScale = 0.0f;
+        isPausedForLevelUp = true;
         gameObject.SetActive(true);
-
-        numberPointsToSpend = stats.GetStatPointsToSpend();
-        pointsLeft = numberPointsToSpend;
-
-        strengthText.text = stats.GetBaseStrength().ToString();
-        intelligenceText.text = stats.GetBaseIntelligence().ToString();
-        constitutionText.text = stats.GetBaseConstitution().ToString();
-        dexterityText.text = stats.GetBaseDexterity().ToString();
-        wisdomText.text = stats.GetBaseWisdom().ToString();
+        hasPoint = true;
     }
 
     public void AddStrengthButton()
     {
-        if (numberPointsToSpend > 0)
-        {
-            pointsLeft--;
-            addIntelligence.gameObject.SetActive(true);
-            pointsToSpend.text = pointsLeft.ToString();
-        }
+        if (hasPoint)
+            addStrength.text = (stats.GetBaseStrength() + 1).ToString();
     }
     public void AddIntelligenceButton()
     {
-        if (numberPointsToSpend > 0)
-        {
-            pointsLeft--;
-            addIntelligence.gameObject.SetActive(true);
-            pointsToSpend.text = pointsLeft.ToString();
-        }
+        if(hasPoint)
+        addIntelligence.text = (stats.GetBaseIntelligence() + 1).ToString();
     }
     public void AddConstitutionButton()
     {
-        if (numberPointsToSpend > 0)
-        {
-            pointsLeft--;
-            addConstitution.gameObject.SetActive(true);
-            pointsToSpend.text = pointsLeft.ToString();
-        }
+        if(hasPoint)
+        addConstitution.text = (stats.GetBaseConstitution() + 1).ToString();
     }
     public void AddDexterityButton()
     {
-        if (numberPointsToSpend > 0)
-        {
-            pointsLeft--;
-            addDexterity.gameObject.SetActive(true);
-            pointsToSpend.text = pointsLeft.ToString();
-        }
+        if (hasPoint)
+            addDexterity.text = (stats.GetBaseDexterity() + 1).ToString();
     }
     public void AddWisdomButton()
     {
-        if (numberPointsToSpend > 0)
-        {
-            pointsLeft--;
-            addWisdom.gameObject.SetActive(true);
-            pointsToSpend.text = pointsLeft.ToString();
-        }
+        if (hasPoint)
+            addWisdom.text = (stats.GetBaseWisdom() + 1).ToString();
     }
 
     public void ResetButton()
     {
-        pointsLeft = numberPointsToSpend;   // Reset to grabbed value
-        pointsToSpend.text = pointsLeft.ToString();
+        addStrength.text = stats.GetBaseStrength().ToString();
+        addIntelligence.text = stats.GetBaseIntelligence().ToString();
+        addConstitution.text = stats.GetBaseConstitution().ToString();
+        addDexterity.text = stats.GetBaseDexterity().ToString();
+        addWisdom.text = stats.GetBaseWisdom().ToString();
 
-        addStrength.gameObject.SetActive(false);
-        addIntelligence.gameObject.SetActive(false);
-        addConstitution.gameObject.SetActive(false);
-        addDexterity.gameObject.SetActive(false);
-        addWisdom.gameObject.SetActive(false);
+        hasPoint = true;
     }
 
     public void AcceptButton()
     {
-        if (addStrength.IsActive())
+        if (!hasPoint)
         {
-            stats.ModifyBaseStrength(1);
-            addStrength.gameObject.SetActive(false);
-        }
-        if (addIntelligence.IsActive())
-        {
-            stats.ModifyBaseIntelligence(1);
-            addIntelligence.gameObject.SetActive(false);
-        }
-        if (addConstitution.IsActive())
-        {
-            stats.ModifyBaseConstitution(1);
-            addConstitution.gameObject.SetActive(false);
-        }
-        if (addDexterity.IsActive())
-        {
-            stats.ModifyBaseDexterity(1);
-            addDexterity.gameObject.SetActive(false);
-        }
-        if (addWisdom.IsActive())
-        {
-            stats.ModifyBaseWisdom(1);
-            addWisdom.gameObject.SetActive(false);
-        }
+            switch (pointSpend)
+            {
+                case StatAdded.Str:
+                    stats.ModifyBaseStrength(1);
+                    break;
+                case StatAdded.Int:
+                    stats.ModifyBaseIntelligence(1);
+                    break;
+                case StatAdded.Con:
+                    stats.ModifyBaseConstitution(1);
+                    break;
+                case StatAdded.Dex:
+                    stats.ModifyBaseDexterity(1);
+                    break;
+                case StatAdded.Wis:
+                    stats.ModifyBaseWisdom(1);
+                    break;
+            }
 
-        stats.SetNumberStatPointsToSpend(numberPointsToSpend);
-
-        Time.timeScale = 1.0f;
-        gameObject.SetActive(false);
+            Time.timeScale = 1.0f;
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("Must spend point to leave levelup screen!");
+        }
     }
 }
