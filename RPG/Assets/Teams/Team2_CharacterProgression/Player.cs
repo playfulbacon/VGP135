@@ -14,12 +14,9 @@ public class Player : MonoBehaviour
     int currentExperience = 0;
     int nextLevelExperienceRequired = 10;
 
-    public int dexterityOnLevelUp = 2;
-    public int strengthOnLevelUp = 1;
-
     private void Awake()
     {
-        stats = this.GetComponent<Stats>();
+        stats = GetComponent<Stats>();
     }
 
     void Start()
@@ -43,8 +40,6 @@ public class Player : MonoBehaviour
     }
     public void LevelUpStats()
     {
-        stats.ModifyBaseStrength(strengthOnLevelUp);
-        stats.ModifyBaseDexterity(dexterityOnLevelUp);
 
         // Allow user to level up as well
 

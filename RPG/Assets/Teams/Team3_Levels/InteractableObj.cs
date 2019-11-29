@@ -35,17 +35,17 @@ public abstract class InteractableObj : MonoBehaviour
     {
         ObjUpdate();
     }
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision collision)
     {
-        OnTouch(col.gameObject);
+        OnTouch(collision.gameObject);
     }
-    private void OnTriggerStay(Collider col)
+    private void OnCollisionStay(Collision collision)
     {
-        IsTouching(col.gameObject);
+        IsTouching(collision.gameObject);
     }
-    private void OnTriggerExit(Collider col)
+    public void OnCollisionExit(Collision collision)
     {
-        OnExit(col.gameObject);
+        OnExit(collision.gameObject);
     }
 
 
