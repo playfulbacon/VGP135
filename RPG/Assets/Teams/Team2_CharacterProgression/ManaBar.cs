@@ -46,7 +46,7 @@ public class ManaBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setMana(45);
+        setMana(100);
     }
 
 
