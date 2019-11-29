@@ -11,11 +11,14 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed = 5.0f;
+    [SerializeField]
+    private float rotationSpeed = 20.0f;
     private NavMeshAgent agent;
     private bool isMoving;
 
     // - Getter & Setter -----------------------------------------------------------------------
-    public bool IsMoving{ get { return isMoving; }}
+    public bool IsMoving        { get { return isMoving; }}
+    public NavMeshAgent Agent   { get { return agent;    }}
 
     // - MonoBehavior functions ----------------------------------------------------------------
     void Awake()
@@ -39,5 +42,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         isMoving = Vector3.SqrMagnitude(agent.velocity) > 1.0f;
+    }
+
+    public void RotateTowards(Transform target)
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(transform.position, 0.25f);
     }
 }
