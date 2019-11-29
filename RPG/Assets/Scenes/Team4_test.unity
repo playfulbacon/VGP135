@@ -431,14 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91255881468d3be4fb123a60cc6ae0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 714839968}
-  followSpeed: 5
---- !u!1 &714839968 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4766142521128380865, guid: 879fb6c9b872bf64ab052b7104e7f540,
-    type: 3}
-  m_PrefabInstance: {fileID: 4766142520749358689}
-  m_PrefabAsset: {fileID: 0}
+  player: {fileID: 714839974}
 --- !u!4 &714839974 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4766142521128380868, guid: 879fb6c9b872bf64ab052b7104e7f540,
@@ -724,7 +717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 714839974}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1566540510
 BoxCollider:

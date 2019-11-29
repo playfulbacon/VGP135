@@ -29,7 +29,10 @@ public class AttackDelayModule : MonoBehaviour
     void FixedUpdate()
     {
         if (!mTarget)
+        {
+            mAnimationController.SetIdleAnimation();
             return;
+        }
 
         if(!mPlayerMovment.IsMoving)
             mPlayerMovment.RotateTowards(mTarget.transform);
