@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public GameObject ranger;
-    public GameObject wizard;
+    public enum ClassType { ranger, wizard, warrior };
+
+    public List<SelectableCharacter> selectableCharacters;
+    [System.Serializable]
+    public class SelectableCharacter
+    {
+        public GameObject go;
+        public ClassType classType;
+    }
+    Dictionary<ClassType, SelectableCharacter> selectableCharacterDictionary = new Dictionary<ClassType, SelectableCharacter>();
+    int characterIndex = 0;
 
     private void Awake()
     {
-        ranger.SetActive(true);
-        wizard.SetActive(false);
+        foreach (SelectableCharacter character in selectableCharacters)
+            selectableCharacterDictionary.Add(character.classType, character);
+
+        SetCharacter(selectableCharacters[0]);
     }
 
     public void AcceptButton()
@@ -18,33 +29,33 @@ public class CharacterSelect : MonoBehaviour
 
     }
 
+    public void SetCharacter(int index)
+    {
+        SetCharacter(selectableCharacters[index]);
+    }
+    public void SetCharacter(SelectableCharacter selectableCharacter)
+    {
+        foreach (SelectableCharacter character in selectableCharacters)
+            character.go.SetActive(character == selectableCharacter);
+    }
+
     public void NextButton()
     {
-        Debug.Log("Next");
-        if (ranger.activeInHierarchy)
-        {
-            ranger.SetActive(false);
-            wizard.SetActive(true);
-        }
+        if (characterIndex < selectableCharacters.Count)
+            characterIndex++;
         else
-        {
-            ranger.SetActive(true);
-            wizard.SetActive(false);
-        }
+            characterIndex = 0;
+
+        SetCharacter(characterIndex);
     }
 
     public void PreviousButton()
     {
-        Debug.Log("Previous");
-        if (wizard.activeInHierarchy)
-        {
-            ranger.SetActive(true);
-            wizard.SetActive(false);
-        }
+        if (characterIndex > 0)
+            characterIndex--;
         else
-        {
-            ranger.SetActive(false);
-            wizard.SetActive(true);
-        }
+            characterIndex = selectableCharacters.Count - 1;
+
+        SetCharacter(characterIndex);
     }
 }
