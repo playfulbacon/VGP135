@@ -66,4 +66,9 @@ public class XPBar : MonoBehaviour
         }
     }
 
+    // Gain EXP
+    public void GainExp(int value)
+    {
+        exprience += value;
+    }
 }
