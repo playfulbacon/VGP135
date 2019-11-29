@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public sealed class Slime : Enemy
 {
@@ -9,9 +10,11 @@ public sealed class Slime : Enemy
     float mRandomDirectionCooldown = 1.0f;
     float mRandomDirectionTracker;
 
+    NavMeshAgent agent;
+
     protected override void CreateLootTable()
     {
-        for (int i = 0; i < 200; i++)
+        for (int i = 0; i < 1; i++)
         {
             mLootTable.Add(new HealthPotion());
             mLootTable.Add(new FireHappy());
@@ -31,6 +34,8 @@ public sealed class Slime : Enemy
         SetRandomDirection();
         mAttackCooldown = 2.0f;
         CreateLootTable();
+        agent = GetComponent<NavMeshAgent>();
+        StartCoroutine(Movement());
     }
 
     void SetRandomDirection()
@@ -42,7 +47,7 @@ public sealed class Slime : Enemy
     private void FixedUpdate()
     {
         base.FixedUpdate();
-        Move();
+        //Move();
         //mCurrentHP--;
     }
 
@@ -69,9 +74,24 @@ public sealed class Slime : Enemy
             transform.position += mRandomDirection * Time.deltaTime;
         }
         if (mRandomDirectionTracker < 10f)
-            mRandomDirectionTracker += Time.deltaTime;
+            mRandomDirectionTracker += Time.deltaTime;       
     }
 
+    IEnumerator Movement()
+    {
+        Vector3 targetDestination = transform.position + mRandomDirection;
+        agent.SetDestination(targetDestination);
+        while (true)
+        {
+            if (Vector3.Distance(transform.position, targetDestination) <= 0.2f)
+            {
+                SetRandomDirection();             
+                targetDestination = transform.position + mRandomDirection;
+                agent.SetDestination(targetDestination);
+            }
+            yield return null;
+        }
+    }
     private void OnCollisionStay(Collision collision)
     {
         Player player = collision.gameObject.GetComponent<Player>();
