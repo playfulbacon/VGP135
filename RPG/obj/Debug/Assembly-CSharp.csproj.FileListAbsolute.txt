@@ -810,9 +810,6 @@ C:\Users\1840549\Desktop\o\VGP135\RPG\obj\Debug\Assembly-CSharp.dll
 C:\Users\1840549\Desktop\o\VGP135\RPG\obj\Debug\Assembly-CSharp.pdb
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\com.unity.multiplayer-hlapi.Editor.dll
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\com.unity.multiplayer-hlapi.Runtime.dll
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\com.unity.multiplayer-weaver.Editor.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Microsoft.Win32.Primitives.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\mscorlib.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\netstandard.dll
@@ -933,8 +930,6 @@ C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Locator.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.TextMeshPro.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEditor.dll
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEditor.SpatialTracking.dll
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEditor.XR.LegacyInputHelpers.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.AccessibilityModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.AIModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.AnimationModule.dll
@@ -964,7 +959,6 @@ C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.PhysicsModule
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.ProfilerModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.ScreenCaptureModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.SharedInternalsModule.dll
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.SpriteMaskModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.SpriteShapeModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.StreamingModule.dll
@@ -995,7 +989,6 @@ C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.VFXModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.VideoModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.VRModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.WindModule.dll
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.XR.LegacyInputHelpers.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.XRModule.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Cecil.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.SerializationLogic.dll
@@ -1006,15 +999,8 @@ C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.IvyParser.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.CecilTools.dll
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.xml
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEditor.xml
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\com.unity.multiplayer-hlapi.Editor.pdb
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.TextMeshPro.Editor.pdb
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\com.unity.multiplayer-weaver.Editor.pdb
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.XR.LegacyInputHelpers.pdb
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEditor.SpatialTracking.pdb
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.SpatialTracking.pdb
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.TextMeshPro.pdb
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEditor.XR.LegacyInputHelpers.pdb
-C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\com.unity.multiplayer-hlapi.Runtime.pdb
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.AIModule.xml
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.ARModule.xml
 C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\UnityEngine.AccessibilityModule.xml
@@ -1349,3 +1335,14 @@ C:\Users\1840549\Desktop\rpg1\VGP135\RPG\obj\Debug\Assembly-CSharp.csproj.CoreCo
 C:\Users\1840549\Desktop\rpg1\VGP135\RPG\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\1840549\Desktop\rpg1\VGP135\RPG\obj\Debug\Assembly-CSharp.dll
 C:\Users\1840549\Desktop\rpg1\VGP135\RPG\obj\Debug\Assembly-CSharp.pdb
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Analytics.DataPrivacy.dll
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Analytics.Editor.dll
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Analytics.StandardEvents.dll
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Analytics.Tracker.dll
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.CollabProxy.Editor.dll
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Timeline.dll
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Timeline.Editor.dll
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Timeline.Editor.pdb
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Timeline.pdb
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.CollabProxy.Editor.pdb
+C:\Users\William\Desktop\rpg\VGP135\RPG\Temp\bin\Debug\Unity.Analytics.DataPrivacy.pdb

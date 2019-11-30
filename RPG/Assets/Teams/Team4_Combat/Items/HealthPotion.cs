@@ -11,9 +11,9 @@ public sealed class HealthPotion : Consumable
         if (mItemCount > 0)
         {
             ConsumeItem();
-            Player player = FindObjectOfType<Player>();
-            //if(player)
-                //player.Heal(mRecoverAmount);
+            Stats stats = FindObjectOfType<Stats>();
+            if(stats)
+                stats.Heal(mRecoverAmount);
         }
     }
 

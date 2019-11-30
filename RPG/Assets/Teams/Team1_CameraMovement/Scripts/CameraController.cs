@@ -26,6 +26,7 @@ public class CameraController : MonoBehaviour
         //Vector3 targetPosition = objectToFollow.transform.position;
         //Vector3 newPosition = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
         //transform.position = new Vector3(newPosition.x, transform.position.y, newPosition.z);
-        myTransform.position = player.position + offset;
+        if(player)
+            myTransform.position = player.position + offset;
     }
 }

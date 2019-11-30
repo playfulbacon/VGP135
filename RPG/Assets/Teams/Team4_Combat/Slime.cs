@@ -36,6 +36,7 @@ public sealed class Slime : Enemy
         CreateLootTable();
         agent = GetComponent<NavMeshAgent>();
         StartCoroutine(Movement());
+        mAttack = 10;
     }
 
     void SetRandomDirection()
@@ -95,7 +96,8 @@ public sealed class Slime : Enemy
 
     private void OnTriggerStay(Collider other)
     {
-        Player player = other.gameObject.GetComponent<Player>();
+        Debug.Log(other.transform.name);
+        Player player = other.GetComponent<Player>();
         if (player && (mAttackTracker > mAttackCooldown))
         {
             Debug.Log("player hit by slime");

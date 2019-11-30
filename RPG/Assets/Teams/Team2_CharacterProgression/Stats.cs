@@ -31,11 +31,17 @@ public class Stats : MonoBehaviour
     int maxMagicPoints = 100;
     int currentMagicPoints = 100;
 
+    [SerializeField]
     float maxHealth = 100;
+    [SerializeField]
     float currentHealth = 100;
 
     int leftoverStatPoints = 0;
 
+    //William tracking health percentage
+    [SerializeField]
+    float healthPercentage;
+    public float GetHealthPercentage() { return healthPercentage; }
     //William heal function
     public void Heal(int healAmount)
     {
@@ -65,7 +71,14 @@ public class Stats : MonoBehaviour
         else
             Debug.Log("The attack did go through player's armor");
     }
-
+    //William health calculation;
+    private void Update()
+    {
+        if (currentHealth <= 0)
+            Destroy(gameObject);
+        if(maxHealth > 0)
+            healthPercentage = currentHealth / maxHealth;
+    }
 
 
     /// Strength Functions ----------------------------------------------------------
