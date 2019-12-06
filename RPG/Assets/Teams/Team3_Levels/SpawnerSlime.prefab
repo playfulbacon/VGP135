@@ -40,10 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2010984734925312818}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6918c85e79905f24caf365cae2716291, type: 3}
+  m_Script: {fileID: 11500000, guid: c394577f09b15b249940e54ead6457b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: {fileID: 0}
+  Enemy: {fileID: 5368957815824702276, guid: bf70cfd5d9b7f7545b54d59ce44813ee, type: 3}
   AmountofEn: 10
   SpawnArea: {x: 20, y: 0, z: 20}
   ArrayOfEn: []
