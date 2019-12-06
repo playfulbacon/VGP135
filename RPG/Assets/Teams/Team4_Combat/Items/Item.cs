@@ -27,10 +27,10 @@ public abstract class Item : MonoBehaviour
                 mDropChance = 50;
                 break;
             case ItemGrade.mRare:
-                mDropChance = 100;
+                mDropChance = 20;
                 break;
             case ItemGrade.mLegendary:
-                mDropChance = 1;
+                mDropChance = 10;
                 break;
             default:
                 break;
