@@ -128,7 +128,7 @@ public class Inventory : MonoBehaviour
             selectedItem.UseItem();
             if(selectedItem.GetItemCount() == 0)
             {
-                items.Remove(items[index]);
+                items.RemoveAt(index);
             }
         }
         GenerateInventoryIcons();
