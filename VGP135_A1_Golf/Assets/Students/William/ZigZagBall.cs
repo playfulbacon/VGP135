@@ -1,0 +1,167 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Unity.IO;
+
+[RequireComponent(typeof(Rigidbody))]
+public class ZigZagBall : MonoBehaviour
+{
+    Rigidbody rb;
+    bool isPressed = false;
+    bool isDragging = false;
+    public Transform aimPrefab;
+    Vector3 hitDirection;
+    float hitMaxForce = 1000f;
+
+    [SerializeField]
+    float currentForce = 0f;
+
+    Vector3 mouseStartPosition;
+    Vector3 mouseFinalPosition;
+
+    float forcePercentage = 0.0f;
+
+    float maxForceDistance = 200.0f;
+
+    float timeRatio = 0.2f;
+
+    float currentForceDistance;
+
+    float aimPrefabZLength;
+
+    bool isZigZagEnabled;
+    float zigZagDuration;
+    int zigZagCounter;
+    float zigZagSpeed;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        aimPrefab = Instantiate(aimPrefab);
+        aimPrefabZLength = aimPrefab.transform.localScale.z;
+        aimPrefab.gameObject.SetActive(false);
+        isZigZagEnabled = false;
+        zigZagDuration = 0.5f;
+        zigZagCounter = 0;
+        zigZagSpeed = 300f;
+    }
+
+    void LateUpdate()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            rb.isKinematic = true;
+            isPressed = true;
+
+            Time.timeScale = timeRatio;
+        }
+
+        if (isPressed)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit = new RaycastHit();
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 groundHit = hit.point;
+                groundHit.y = transform.position.y;
+
+                if (Vector3.Distance(transform.position, groundHit) > 0.5f)
+                {
+                    if (!isDragging)
+                        mouseStartPosition = Input.mousePosition;
+
+                    isDragging = true;
+                    zigZagCounter = 0;
+ 
+                    aimPrefab.gameObject.SetActive(true);
+
+                    hitDirection = -(groundHit - transform.position).normalized;
+                    aimPrefab.transform.forward = hitDirection;
+                    aimPrefab.position = transform.position - hitDirection * 0.5f;
+                }
+            }
+        }
+
+        if (isDragging)
+        {
+            mouseFinalPosition = Input.mousePosition;
+            currentForceDistance = (mouseFinalPosition - mouseStartPosition).magnitude;
+
+            forcePercentage = currentForceDistance / maxForceDistance;
+
+            if (forcePercentage > 1.0f)
+                forcePercentage = 1.0f;
+
+            aimPrefab.GetComponent<Aimer>().forceQuad.transform.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
+            //aimPrefab.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            currentForce = hitMaxForce * forcePercentage;
+
+            rb.isKinematic = false;
+            isPressed = false;
+            aimPrefab.gameObject.SetActive(false);
+
+            if (isDragging)
+                rb.AddForce(hitDirection * currentForce);
+
+            if (forcePercentage > 0.5f && isZigZagEnabled)
+            {
+                zigZagCounter = 4;
+                StartCoroutine(ZigZagMovement());
+            }
+
+            isDragging = false;
+            currentForce = 0.0f;
+
+            Time.timeScale = 1.0f;
+        }
+
+        Time.fixedDeltaTime = .02f * Time.timeScale;
+        Debug.Log(Time.timeScale);
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
+        if (goal)
+        {
+            goal.OnHit();
+            rb.isKinematic = true;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        FakeGoal fakegoal = other.attachedRigidbody?.GetComponent<FakeGoal>();
+        if(fakegoal)
+        {
+            fakegoal.SetTextInactive();
+        }
+    }
+
+    IEnumerator ZigZagMovement()
+    {
+        while(zigZagCounter > 0)
+        {
+            if (zigZagCounter % 2 != 0)
+                rb.AddForce(Vector3.left * zigZagSpeed);
+            else
+                rb.AddForce(Vector3.right * zigZagSpeed);
+            --zigZagCounter;
+            yield return new WaitForSeconds(zigZagDuration);
+        }
+    }
+
+    public void ToggleZigZag()
+    {
+        if (isZigZagEnabled)
+            isZigZagEnabled = false;
+        else
+            isZigZagEnabled = true;
+    }
+
+}
