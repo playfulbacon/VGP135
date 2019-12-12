@@ -9,7 +9,6 @@ public class FindMatches : MonoBehaviour
     private Board1 board;
     public List<GameObject> currentMatches = new List<GameObject>();
 
-    // Use this for initialization
     void Start()
     {
         board = FindObjectOfType<Board1>();
@@ -98,13 +97,10 @@ public class FindMatches : MonoBehaviour
         {
             for (int j = 0; j < board.hight; j++)
             {
-                //Check if that piece exists
                 if (board.allDots[i, j] != null)
                 {
-                    //Check the tag on that dot
                     if (board.allDots[i, j].tag == color)
                     {
-                        //Set that dot to be matched
                         board.allDots[i, j].GetComponent<Dot>().isMatched = true;
                     }
                 }

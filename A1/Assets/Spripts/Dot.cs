@@ -28,21 +28,10 @@ public class Dot : MonoBehaviour
 
     bool isTouched = false;
 
-    // Start is called before the first frame update
-    // Use this for initialization
     void Start()
     {
-
-
         board = FindObjectOfType<Board1>();
         findMatches = FindObjectOfType<FindMatches>();
-        //targetX = (int)transform.position.x;
-        //targetY = (int)transform.position.y;
-        //row = targetY;
-        //column = targetX;
-        //previousRow = row;
-        //previousColumn = column;
-
     }
 
 
@@ -66,14 +55,12 @@ public class Dot : MonoBehaviour
         }
         else
         {
-            //Directly set the position
             tempPosition = new Vector2(targetX, transform.position.y);
             transform.position = tempPosition;
 
         }
         if (Mathf.Abs(targetY - transform.position.y) > .1)
         {
-            //Move Towards the target
             tempPosition = new Vector2(transform.position.x, targetY);
             transform.position = Vector2.Lerp(transform.position, tempPosition, .6f);
             if (board.allDots[column, row] != this.gameObject)
@@ -85,7 +72,6 @@ public class Dot : MonoBehaviour
         }
         else
         {
-            //Directly set the position
             tempPosition = new Vector2(transform.position.x, targetY);
             transform.position = tempPosition;
 
@@ -112,9 +98,7 @@ public class Dot : MonoBehaviour
                 board.DestroyMatches();
 
             }
-            //otherDot = null;
         }
-
     }
 
     private void OnMouseDown()
