@@ -279,15 +279,16 @@ MonoBehaviour:
   currentState: 1
   width: 7
   hight: 7
-  offSet: 0
+  offSet: 10
   tilePrefab: {fileID: 5083019460434546440, guid: 9982222407e77b441b158d24699ab707,
     type: 3}
   dots:
-  - {fileID: -6889889610169046135, guid: dcc0ec81c8ede674cae98e9866ec69b6, type: 3}
-  - {fileID: -2144059631641179550, guid: 195371280bc41954d8a3ba2080dfbdd4, type: 3}
-  - {fileID: -8114026722942235695, guid: b0faf119de3da2446aeca9f8a563bb37, type: 3}
-  - {fileID: -2064435602341032421, guid: 8149b3515c383714b9642860b77ceef5, type: 3}
-  - {fileID: -7274734106328454177, guid: fe152212fa3d55c4280573e16fa6023f, type: 3}
+  - {fileID: 4641482279995385529, guid: dcc0ec81c8ede674cae98e9866ec69b6, type: 3}
+  - {fileID: 7815459243081047177, guid: 195371280bc41954d8a3ba2080dfbdd4, type: 3}
+  - {fileID: 5914101609856669941, guid: b0faf119de3da2446aeca9f8a563bb37, type: 3}
+  - {fileID: 6317930229676310200, guid: 8149b3515c383714b9642860b77ceef5, type: 3}
+  - {fileID: 6773038668071574466, guid: fe152212fa3d55c4280573e16fa6023f, type: 3}
+  currentDot: {fileID: 0}
 --- !u!4 &1651992831
 Transform:
   m_ObjectHideFlags: 0

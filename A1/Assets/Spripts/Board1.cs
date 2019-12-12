@@ -9,15 +9,14 @@ public enum GameState
 
 public class Board1 : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameState currentState = GameState.move;
     public int width;
     public int hight;
     public int offSet;
     public GameObject tilePrefab;
+    public GameObject[] dots;
+    public GameObject[,] allDots;
     private BackgroundTile[,] allTiles;
-    public Dot[] dots;
-    public Dot[,] allDots;
     public Dot currentDot;
     private FindMatches findMatches;
 
@@ -25,11 +24,10 @@ public class Board1 : MonoBehaviour
     {
         findMatches = FindObjectOfType<FindMatches>();
         allTiles = new BackgroundTile[width, hight];
-        allDots = new Dot[width, hight];
+        allDots = new GameObject[width, hight];
         SetUp();
     }
 
-    // Update is called once per frame
     private void SetUp()
     {
         for (int i = 0; i < width; i++)
@@ -53,16 +51,18 @@ public class Board1 : MonoBehaviour
                 }
                 maxIterations = 0;
 
-                Dot dot = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
+                GameObject dot = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
                 dot.GetComponent<Dot>().row = j;
                 dot.GetComponent<Dot>().column = i;
                 dot.transform.parent = this.transform;
                 dot.name = "( " + i + ", " + j + " )";
                 allDots[i, j] = dot;
             }
+
         }
     }
-    private bool MatchesAt(int column, int row, Dot piece)
+
+    private bool MatchesAt(int column, int row, GameObject piece)
     {
         if (column > 1 && row > 1)
         {
@@ -110,16 +110,17 @@ public class Board1 : MonoBehaviour
     {
         for (int i = 0; i < width; i++)
         {
-            for (int j = 0; j < width; j++)
+            for (int j = 0; j < hight; j++)
             {
                 if (allDots[i, j] != null)
                 {
+
                     DestroyMatchesAt(i, j);
                 }
             }
         }
-        StartCoroutine(DecreaseRowCo());
         findMatches.currentMatches.Clear();
+        StartCoroutine(DecreaseRowCo());
     }
 
     private IEnumerator DecreaseRowCo()
@@ -142,7 +143,7 @@ public class Board1 : MonoBehaviour
             nullCount = 0;
         }
         yield return new WaitForSeconds(.4f);
-
+        StartCoroutine(FillBoardCo());
     }
 
     private void RefillBoard()
@@ -155,7 +156,7 @@ public class Board1 : MonoBehaviour
                 {
                     Vector2 tempPosition = new Vector2(i, j + offSet);
                     int dotToUse = Random.Range(0, dots.Length);
-                    Dot piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
+                    GameObject piece = Instantiate(dots[dotToUse], tempPosition, Quaternion.identity);
                     allDots[i, j] = piece;
                     piece.GetComponent<Dot>().row = j;
                     piece.GetComponent<Dot>().column = i;
@@ -197,5 +198,10 @@ public class Board1 : MonoBehaviour
         currentDot = null;
         yield return new WaitForSeconds(.5f);
         currentState = GameState.move;
+
     }
+
+
+
 }
+

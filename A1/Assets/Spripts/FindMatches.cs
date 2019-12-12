@@ -7,7 +7,7 @@ public class FindMatches : MonoBehaviour
 {
 
     private Board1 board;
-    public List<Dot> currentMatches = new List<Dot>();
+    public List<GameObject> currentMatches = new List<GameObject>();
 
     // Use this for initialization
     void Start()
@@ -20,7 +20,7 @@ public class FindMatches : MonoBehaviour
         StartCoroutine(FindAllMatchesCo());
     }
 
-    private void AddToListAndMatch(Dot dot)
+    private void AddToListAndMatch(GameObject dot)
     {
         if (!currentMatches.Contains(dot))
         {
@@ -29,7 +29,7 @@ public class FindMatches : MonoBehaviour
         dot.GetComponent<Dot>().isMatched = true;
     }
 
-    private void GetNearbyPieces(Dot dot1, Dot dot2, Dot dot3)
+    private void GetNearbyPieces(GameObject dot1, GameObject dot2, GameObject dot3)
     {
         AddToListAndMatch(dot1);
         AddToListAndMatch(dot2);
@@ -43,16 +43,16 @@ public class FindMatches : MonoBehaviour
         {
             for (int j = 0; j < board.hight; j++)
             {
-                Dot currentDot = board.allDots[i, j];
+                GameObject currentDot = board.allDots[i, j];
 
                 if (currentDot != null)
                 {
                     Dot currentDotDot = currentDot.GetComponent<Dot>();
                     if (i > 0 && i < board.width - 1)
                     {
-                        Dot leftDot = board.allDots[i - 1, j];
+                        GameObject leftDot = board.allDots[i - 1, j];
 
-                        Dot rightDot = board.allDots[i + 1, j];
+                        GameObject rightDot = board.allDots[i + 1, j];
 
 
                         if (leftDot != null && rightDot != null)
@@ -69,9 +69,9 @@ public class FindMatches : MonoBehaviour
 
                     if (j > 0 && j < board.hight - 1)
                     {
-                        Dot upDot = board.allDots[i, j + 1];
+                        GameObject upDot = board.allDots[i, j + 1];
 
-                        Dot downDot = board.allDots[i, j - 1];
+                        GameObject downDot = board.allDots[i, j - 1];
 
 
                         if (upDot != null && downDot != null)
@@ -112,9 +112,9 @@ public class FindMatches : MonoBehaviour
         }
     }
 
-    List<Dot> GetColumnPieces(int column)
+    List<GameObject> GetColumnPieces(int column)
     {
-        List<Dot> dots = new List<Dot>();
+        List<GameObject> dots = new List<GameObject>();
         for (int i = 0; i < board.hight; i++)
         {
             if (board.allDots[column, i] != null)
@@ -126,9 +126,9 @@ public class FindMatches : MonoBehaviour
         return dots;
     }
 
-    List<Dot> GetRowPieces(int row)
+    List<GameObject> GetRowPieces(int row)
     {
-        List<Dot> dots = new List<Dot>();
+        List<GameObject> dots = new List<GameObject>();
         for (int i = 0; i < board.width; i++)
         {
             if (board.allDots[i, row] != null)
