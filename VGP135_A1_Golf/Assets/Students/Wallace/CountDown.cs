@@ -11,6 +11,11 @@ public class CountDown : MonoBehaviour
     private float timer;
     bool isGameOver = false;
 
+    public void GameOver()
+    {
+        isGameOver = true;
+    }
+
     private void Start()
     {
         timer = mainTimer;
@@ -18,7 +23,11 @@ public class CountDown : MonoBehaviour
 
     private void Update()
     {
-        if(timer >= 0.01f)
+        if(FindObjectOfType<Ball>().IsGameOver())
+        {
+            uiText.text = timer.ToString("F");
+        }
+        else if (timer >= 0.01f)
         {
             uiText.text = timer.ToString("F");
             timer -= Time.deltaTime;

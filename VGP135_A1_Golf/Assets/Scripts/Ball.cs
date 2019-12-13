@@ -30,6 +30,11 @@ public class Ball : MonoBehaviour
     float aimPrefabZLength;
     bool isGameOver = false;
 
+    public bool IsGameOver()
+    {
+         return isGameOver;
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -135,6 +140,7 @@ public class Ball : MonoBehaviour
         Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
         if (goal)
         {
+            goal.OnHit();
             GameOver();
         }
 
@@ -153,7 +159,7 @@ public class Ball : MonoBehaviour
             fakegoal.SetTextInactive();
         }
     }
-<<<<<<< HEAD
+
 
     public void GameOver()
     {
@@ -161,6 +167,5 @@ public class Ball : MonoBehaviour
         rb.isKinematic = true;
         FindObjectOfType<GoalMenu>().SetGoalMenu(true);
     }
-=======
->>>>>>> master
+
 }

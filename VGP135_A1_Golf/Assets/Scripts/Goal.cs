@@ -12,6 +12,6 @@ public class Goal : MonoBehaviour
 
     public virtual void OnHit()
     {
-        FindObjectOfType<GoalMenu>().SetGoalMenu(true);
+        
     }
 }
