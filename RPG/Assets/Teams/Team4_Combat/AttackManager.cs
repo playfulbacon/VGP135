@@ -13,12 +13,12 @@ public class AttackManager : MonoBehaviour
 
     private void Awake()
     {
-        player = GetComponent<Player>();
+        
     }
 
     private void Start()
     {
-
+        player = GetComponent<Player>();
     }
 
     public void GetClosestTarget()
@@ -39,6 +39,7 @@ public class AttackManager : MonoBehaviour
             {
                 closestTarget = enemy;
                 closestDistance = distance;
+
             }
         }
     }
