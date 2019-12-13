@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 1252872467850152371, guid: c82a51a87730d4842a0a19037778112c,
         type: 3}
       propertyPath: levelSelectSceneName
-      value: Team_LevelSelect
+      value: LevelSelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c82a51a87730d4842a0a19037778112c, type: 3}
@@ -809,8 +809,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a40a0aadc48b6f448a0b016bd0465c05, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3040,8 +3040,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSelectSceneName: LevelSelect
-  pauseMenuHolder: {fileID: 0}
-  pauseButtonHolder: {fileID: 0}
+  pauseMenuHolder: {fileID: 698345760}
+  pauseButtonHolder: {fileID: 1195581957}
   pause: 0
 --- !u!4 &1877436434 stripped
 Transform:
