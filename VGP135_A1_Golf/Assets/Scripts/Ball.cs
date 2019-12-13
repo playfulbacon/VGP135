@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour
     float currentForceDistance;
 
     float aimPrefabZLength;
+    bool isGameOver = false;
 
     void Start()
     {
@@ -39,6 +40,8 @@ public class Ball : MonoBehaviour
 
     void LateUpdate()
     {
+        if (isGameOver) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             rb.isKinematic = true;
@@ -113,8 +116,7 @@ public class Ball : MonoBehaviour
         Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
         if (goal)
         {
-            goal.OnHit();
-            rb.isKinematic = true;
+            GameOver();
         }
     }
 
@@ -127,5 +129,10 @@ public class Ball : MonoBehaviour
         }
     }
 
-
+    public void GameOver()
+    {
+        isGameOver = true;
+        rb.isKinematic = true;
+        FindObjectOfType<GoalMenu>().SetGoalMenu(true);
+    }
 }
