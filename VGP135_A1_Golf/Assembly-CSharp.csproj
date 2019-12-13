@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\GoalMenu.cs" />
     <Compile Include="Assets\Scripts\LevelSelectHole.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Students\Aisle_Neral\RespawnCube.cs" />
     <Compile Include="Assets\Students\FlavioStuff\FanRotation.cs" />
     <Compile Include="Assets\Students\FlavioStuff\ResetLevel.cs" />
