@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 1252872467850152371, guid: c82a51a87730d4842a0a19037778112c,
         type: 3}
       propertyPath: levelSelectSceneName
-      value: Team_LevelSelect
+      value: LevelSelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c82a51a87730d4842a0a19037778112c, type: 3}
@@ -3040,8 +3040,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSelectSceneName: LevelSelect
-  pauseMenuHolder: {fileID: 0}
-  pauseButtonHolder: {fileID: 0}
+  pauseMenuHolder: {fileID: 698345760}
+  pauseButtonHolder: {fileID: 1195581957}
 --- !u!4 &1877436434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 419944, guid: ef6f948035a3ee0479a4dcaadbaa7c6e,
