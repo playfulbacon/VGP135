@@ -245,7 +245,11 @@ PrefabInstance:
     - target: {fileID: 7337988228631546704, guid: d9ecfe4c4cf0b8d409b6e3a28760b283,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+<<<<<<< HEAD:RPG/Assets/Scenes/Main_William.unity
       value: 0.000029176474
+=======
+      value: 0.000043220818
+>>>>>>> master:RPG/Assets/Scenes/Main.unity
       objectReference: {fileID: 0}
     - target: {fileID: 7337988227766921816, guid: d9ecfe4c4cf0b8d409b6e3a28760b283,
         type: 3}
@@ -1567,6 +1571,11 @@ PrefabInstance:
     - target: {fileID: 5258126126767961166, guid: 4a7ce438d4d65ca43bb4ab7c24aa639b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258126126767961167, guid: 4a7ce438d4d65ca43bb4ab7c24aa639b,
+        type: 3}
+      propertyPath: drawDebugLines
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

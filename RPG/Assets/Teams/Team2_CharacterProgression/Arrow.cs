@@ -8,26 +8,34 @@ public class Arrow : MonoBehaviour
     public GameObject Target { set { target = value; } }
     public float moveSpeed = 10.0f;
     public int damage;
+    public float destroyTimer = 3.0f;
+    private bool destroy = false;
 
     // Update is called once per frame
     void Update()
     {
+        if (destroy)
+        {
+            Destroy(gameObject);
+        }
+        destroyTimer -= Time.deltaTime;
+        if (destroyTimer <= 0.0f)
+        {
+            destroy = true;
+        }
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
-        damage = FindObjectOfType<Stats>().GetAttackPower();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Player player = other.GetComponent<Player>();
-        if(!player)
+        if (!other.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
-
             Enemy enemy = other.GetComponentInParent<Enemy>();
             if (enemy)
             {
                 enemy.TakeDamage(damage);
             }
+            destroy = true;
         }
     }
 }

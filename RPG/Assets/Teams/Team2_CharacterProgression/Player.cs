@@ -55,8 +55,12 @@ public class Player : MonoBehaviour
     }
     public void AutoAttack(Enemy enemyTarget)
     {
+        Debug.Log("auto attack");
         // Instantiate an arrow object with a forward vector facing the enemyTarget position. Then gives the target var of the arrow the enemy GameObject enemyTarget
-        GameObject go = Instantiate(autoAttackObject, transform.position, Quaternion.LookRotation((enemyTarget.transform.position - transform.position), Vector3.up));
+        Vector3 direction = enemyTarget.transform.position - transform.position;
+        direction.Normalize();
+        GameObject go = Instantiate(autoAttackObject, transform.position + (direction * 1.0f), Quaternion.identity);
+        go.transform.forward = direction;
         go.GetComponent<Arrow>().Target = enemyTarget.gameObject;
     }
 }
