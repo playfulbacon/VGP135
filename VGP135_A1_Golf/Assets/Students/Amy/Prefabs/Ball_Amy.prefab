@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aimPrefab: {fileID: 6651614994318895179, guid: 04d589b9bd9a41848a3d502a0c1e82c7,
     type: 3}
+  hitMaxForce: 1500
   currentForce: 0
 --- !u!1 &8547736099614345334
 GameObject:
