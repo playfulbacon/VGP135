@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2509930032709156068}
   - component: {fileID: 5584509524447939656}
   - component: {fileID: 7259778146114235801}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   damage: 25
+  destroyTimer: 3
 --- !u!54 &7259778146114235801
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -75,7 +76,7 @@ GameObject:
   - component: {fileID: 2045901792622772724}
   - component: {fileID: 4856729948228650747}
   - component: {fileID: 6841461315126786266}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
