@@ -65,5 +65,7 @@ public abstract class Enemy : MonoBehaviour
     {
         mCurrentHP -= playerDamage;
         DeathCheck();
+        // DamagePop up as new feature
+        DamagePopUp.Create(transform.position, playerDamage);
     }
 }
