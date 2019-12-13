@@ -105,7 +105,7 @@ public class Ball : MonoBehaviour
         }
 
         Time.fixedDeltaTime = .02f * Time.timeScale;
-        Debug.Log(Time.timeScale);
+        //Debug.Log(Time.timeScale);
     }
 
     public void OnTriggerEnter(Collider other)
@@ -115,6 +115,12 @@ public class Ball : MonoBehaviour
         {
             goal.OnHit();
             rb.isKinematic = true;
+        }
+
+        Collectable collectable = other.attachedRigidbody?.GetComponent<Collectable>();
+        if (collectable)
+        {
+            collectable.OnCollect();
         }
     }
 
@@ -126,6 +132,4 @@ public class Ball : MonoBehaviour
             fakegoal.SetTextInactive();
         }
     }
-
-
 }
