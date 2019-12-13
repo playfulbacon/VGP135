@@ -24,6 +24,7 @@ public class Arrow : MonoBehaviour
             destroy = true;
         }
         transform.position += transform.forward * moveSpeed * Time.deltaTime;
+        damage = FindObjectOfType<Stats>().GetAttackPower();
     }
 
     private void OnTriggerEnter(Collider other)

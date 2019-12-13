@@ -14,11 +14,14 @@ public class AttackManager : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
+        if (player != null)
+            Debug.Log("found player AWAKE");
     }
 
     private void Start()
     {
-
+        if (player != null)
+            Debug.Log("found player START");
     }
 
     public void ResetClosestDistance()
@@ -39,7 +42,7 @@ public class AttackManager : MonoBehaviour
             {
                 continue;
             }
-            float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (distance < closestDistance)
             {
                 closestTarget = enemy;
@@ -50,7 +53,9 @@ public class AttackManager : MonoBehaviour
 
     void PlayerAttack()
     {
-        if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed())
+        player = GetComponent<Player>();
+
+        if (closestTarget != null && player && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed())
         {
             //player.AutoAttack(closestTarget);
             GetComponent<AttackDelayModule>().AttackWithDelay(closestTarget);

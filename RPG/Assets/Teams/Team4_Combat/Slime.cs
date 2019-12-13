@@ -21,10 +21,10 @@ public sealed class Slime : Enemy
             mLootTable.Add(new Frostmourne());
         }
 
-        Debug.Log("Slime's loot table:" + mLootTable.Count);
+        //Debug.Log("Slime's loot table:" + mLootTable.Count);
         foreach (var item in mLootTable)
         {
-            Debug.Log(item.GetType().Name);
+            //Debug.Log(item.GetType().Name);
         }
     }
 
@@ -96,11 +96,11 @@ public sealed class Slime : Enemy
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.transform.name);
+        //Debug.Log(other.transform.name);
         Player player = other.GetComponent<Player>();
         if (player && (mAttackTracker > mAttackCooldown))
         {
-            Debug.Log("player hit by slime");
+            //Debug.Log("player hit by slime");
             Attack(player);
             mAttackTracker = 0.0f;
         }

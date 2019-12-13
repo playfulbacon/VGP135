@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
@@ -136,7 +137,7 @@ public class Inventory : MonoBehaviour
 
     public void EquipItem(int index)
     {
-        Item selectedItem = items[index];
+        Item selectedItem = items.ElementAt(index);
         if (index < items.Count && selectedItem is Weapon)
         {
             mEquippedWeapon = (Weapon)selectedItem;

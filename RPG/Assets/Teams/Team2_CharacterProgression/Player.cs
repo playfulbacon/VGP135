@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     int currentExperience = 0;
     int nextLevelExperienceRequired = 10;
 
-    private void Awake()
+    public virtual void Awake()
     {
         stats = GetComponent<Stats>();
     }
@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
     }
     public void AutoAttack(Enemy enemyTarget)
     {
-        Debug.Log("auto attack");
         // Instantiate an arrow object with a forward vector facing the enemyTarget position. Then gives the target var of the arrow the enemy GameObject enemyTarget
         Vector3 direction = enemyTarget.transform.position - transform.position;
         direction.Normalize();
