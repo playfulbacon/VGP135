@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 public class RandomSpawnObstacles : MonoBehaviour
 {
@@ -53,20 +56,22 @@ public class RandomSpawnObstacles : MonoBehaviour
     {
 
     }
+}
 
-    [CustomEditor(typeof(RandomSpawnObstacles))]
-    public class RandomSpawnObstaclesEditor : Editor
+#if UNITY_EDITOR
+[CustomEditor(typeof(RandomSpawnObstacles))]
+public class RandomSpawnObstaclesEditor : Editor
+{
+    public override void OnInspectorGUI()
     {
-        public override void OnInspectorGUI()
+        DrawDefaultInspector();
+        RandomSpawnObstacles myScript = (RandomSpawnObstacles)target;
+
+        if (GUILayout.Button("Spawn Obstacles"))
         {
-            DrawDefaultInspector();
-            RandomSpawnObstacles myScript = (RandomSpawnObstacles)target;
+            myScript.SpawnObstacles(myScript.obstaclesInLevelCount);
 
-            if (GUILayout.Button("Spawn Obstacles"))
-            {
-                myScript.SpawnObstacles(myScript.obstaclesInLevelCount);
-
-            }
         }
     }
 }
+#endif
