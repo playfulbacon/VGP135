@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 4622f85bb1bb6454cb87f12e826a0b24
@@ -119,4 +125,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Students/MingzhuoZhang/MingzhuoZhang_Level4.unity
     guid: d8e3aa204107c78489894a8857f5b193
+  - enabled: 1
+    path: Assets/Students/MingzhuoZhang/MingzhuoZhang_FinalFeature.unity
+    guid: 4a906a08998bb154895fa23acaaef7b9
   m_configObjects: {}

@@ -9,7 +9,7 @@ public class Hole : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("trigger!");
-        if (other.GetComponentInParent<Ball>() != null)
+        if (other.GetComponentInParent<Ball_Amy>() != null)
         {
             other.gameObject.SetActive(false);
             StartCoroutine("Fall");

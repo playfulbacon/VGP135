@@ -24,8 +24,16 @@ public class AttackManager : MonoBehaviour
     public void GetClosestTarget()
     {
         enemies = FindObjectsOfType<Enemy>();
+        closestDistance = float.MaxValue;
+        closestTarget = null;
         foreach (Enemy enemy in enemies)
         {
+            RaycastHit hit;
+            Physics.Raycast(transform.position,(enemy.transform.position - transform.position), out hit);
+            if (hit.collider && !hit.collider.CompareTag("Enemy"))
+            {
+                continue;
+            }
             float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
             if (distance < closestDistance)
             {
