@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Trap
+  - ScoreTracker
   layers:
   - Default
   - TransparentFX

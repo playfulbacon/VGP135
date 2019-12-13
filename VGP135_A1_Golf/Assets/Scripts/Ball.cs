@@ -105,7 +105,7 @@ public class Ball : MonoBehaviour
         }
 
         Time.fixedDeltaTime = .02f * Time.timeScale;
-        Debug.Log(Time.timeScale);
+        //Debug.Log(Time.timeScale);
     }
 
     private void OnCollisionEnter(Collision collision)
