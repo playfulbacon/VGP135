@@ -106,13 +106,21 @@ public class ZigZagBall : MonoBehaviour
             aimPrefab.gameObject.SetActive(false);
 
             if (isDragging)
-                rb.AddForce(hitDirection * currentForce);
-
-            if (forcePercentage > 0.5f && isZigZagEnabled)
             {
-                zigZagCounter = 4;
-                StartCoroutine(ZigZagMovement());
+                if (forcePercentage > 0.5f && isZigZagEnabled)
+                {
+                    zigZagCounter = 4;
+                    StartCoroutine(ZigZagMovement());
+                    rb.AddForce(hitDirection * currentForce * 0.5f);
+                }
+                else
+                {
+                    rb.AddForce(hitDirection * currentForce);
+                }
             }
+                
+
+            
 
             isDragging = false;
             currentForce = 0.0f;
