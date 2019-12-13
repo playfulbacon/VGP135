@@ -17,6 +17,7 @@ public class LevelUpMenu : MonoBehaviour
     public GameObject player;
     Stats stats;
 
+    bool hideAtB = true;
     public static bool isPausedForLevelUp = false;
 
     public Text addStrength;
@@ -27,10 +28,13 @@ public class LevelUpMenu : MonoBehaviour
 
     bool hasPoint = false;
     StatAdded pointSpend = StatAdded.Str;
-
+    
     private void Start()
     {
-        stats = player.GetComponent<Stats>();
+
+       
+
+        stats = player.GetComponent<Stats>();       
     }
 
     public void Update()
@@ -44,9 +48,10 @@ public class LevelUpMenu : MonoBehaviour
 
     public void LevelUpMenuActivate()
     {
+        gameObject.SetActive(true);
         Time.timeScale = 0.0f;
         isPausedForLevelUp = true;
-        gameObject.SetActive(true);
+        
         hasPoint = true;
     }
 

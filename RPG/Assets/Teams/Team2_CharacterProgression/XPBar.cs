@@ -28,6 +28,8 @@ public class XPBar : MonoBehaviour
         ImgXPBar.fillAmount = CurrentExprience;
 
         txtLevel.text = "Level: " + level.ToString();
+        GameObject hidem = GameObject.Find("LevelMenu");
+        hidem.SetActive(false);
     }
 
     // Incease level
