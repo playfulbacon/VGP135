@@ -108,7 +108,26 @@ public class Ball : MonoBehaviour
         }
 
         Time.fixedDeltaTime = .02f * Time.timeScale;
-        Debug.Log(Time.timeScale);
+        //Debug.Log(Time.timeScale);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // When ball trigger the trap, resize it.
+        if  (collision.gameObject.CompareTag("Trap"))
+        {
+            Traps trap = collision.gameObject.GetComponent<Traps>();
+            bool randomTrap = Random.Range(0, 10) < 5;
+            if (randomTrap)
+            {
+                StartCoroutine(trap.ScaleUp(gameObject));
+            }
+            else
+            {
+                StartCoroutine(trap.Shrinking(gameObject));
+            }
+            
+        }
     }
 
     public void OnTriggerEnter(Collider other)
@@ -117,6 +136,12 @@ public class Ball : MonoBehaviour
         if (goal)
         {
             GameOver();
+        }
+
+        Collectable collectable = other.attachedRigidbody?.GetComponent<Collectable>();
+        if (collectable)
+        {
+            collectable.OnCollect();
         }
     }
 
@@ -128,6 +153,7 @@ public class Ball : MonoBehaviour
             fakegoal.SetTextInactive();
         }
     }
+<<<<<<< HEAD
 
     public void GameOver()
     {
@@ -135,4 +161,6 @@ public class Ball : MonoBehaviour
         rb.isKinematic = true;
         FindObjectOfType<GoalMenu>().SetGoalMenu(true);
     }
+=======
+>>>>>>> master
 }

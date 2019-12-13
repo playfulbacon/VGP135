@@ -21,7 +21,7 @@ public class Gateway : InteractableObj
         testWatchObj = obj;
         if (isActive) //Load new level when player touching the gateway while it's activated
         {
-            if (obj.CompareTag("Player") || obj.CompareTag("player"))
+            if (obj.CompareTag("Player"))
             {
                 if (presetlevel) //Use preset levels
                 {
