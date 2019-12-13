@@ -8,8 +8,9 @@ public class ClassGetter : MonoBehaviour
     {
         None = -1,
         Ranger = 0,
-        Wizard = 1,
+        OldMonk = 1,
         //Mage = 2
+        NumOfTypes
     }
 
     private CharactorClass mPlayerClass;
@@ -18,11 +19,13 @@ public class ClassGetter : MonoBehaviour
 
     void Awake()
     {
-        if (GetComponent<Ranger>() != null)
-            mPlayerClass = CharactorClass.Ranger;
-        //else if (GetComponent<Wizard>() != null)
-        //    mPlayerClass = CharactorClass.Wizard;
+        //if (GetComponent<Ranger>() != null)
+        //    mPlayerClass = CharactorClass.Ranger;
+        //else if (GetComponent<OldMonk>() != null)
+        //    mPlayerClass = CharactorClass.OldMonk;
         //else if (GetComponent<Mage>() != null)
         //    mPlayerClass = CharactorClass.Mage;
+        int rand = Random.Range(0, (int)ClassGetter.CharactorClass.NumOfTypes);
+        mPlayerClass = (ClassGetter.CharactorClass)rand;
     }
 }
