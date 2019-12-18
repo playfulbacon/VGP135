@@ -10,6 +10,7 @@ public class AttackManager : MonoBehaviour
     Enemy closestTarget;
     float closestDistance = float.MaxValue;
     float attackCooldown = 0.0f;
+    public float attackRange = 10.0f;
 
     private void Awake()
     {
@@ -43,9 +44,16 @@ public class AttackManager : MonoBehaviour
         }
     }
 
+    public Enemy ReturnCurrentClosestEnemy()
+    {
+        GetClosestTarget();
+        return closestTarget;
+    }
+
     void PlayerAttack()
     {
-        if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed())
+        if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed()
+            && Vector3.Distance(closestTarget.transform.position,player.transform.position) <= attackRange)
         {
             //player.AutoAttack(closestTarget);
             GetComponent<AttackDelayModule>().AttackWithDelay(closestTarget);
