@@ -7,7 +7,7 @@ public class PlayerKey : MonoBehaviour
     List<int> keyValues = new List<int>();
     public void OnTriggerEnter(Collider collider)
     {
-        KeyScript key = collider.attachedRigidbody.GetComponent<KeyScript>();
+        KeyScript key = collider.GetComponent<KeyScript>();
 
         if (key)
         {

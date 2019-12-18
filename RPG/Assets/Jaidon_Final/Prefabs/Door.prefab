@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20bcf675361c9c449acab289da11754e, type: 2}
+  - {fileID: 2100000, guid: f562c951a7c1c194b964ed9f93d1fd09, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -65,6 +65,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -150,13 +151,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9198175791667096014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0624ccc77cf6b0246ac99b367632e2dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 7f7a9e9f7d150684fbda0d7aabc230af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyIsUnique: 1
+  keyIsUnique: 0
   isLocked: 1
-  keyValue: 10
-  openPosition: {x: 0, y: -1.1, z: 0}
+  keyValue: -1
+  openPosition: {x: 0, y: 0, z: 0}
 --- !u!208 &147263204
 NavMeshObstacle:
   m_ObjectHideFlags: 0
