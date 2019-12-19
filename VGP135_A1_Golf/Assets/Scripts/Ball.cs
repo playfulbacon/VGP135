@@ -1,16 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Ball : MonoBehaviour
 {
+    public static Ball instance;
+
     Rigidbody rb;
     bool isPressed = false;
     bool isDragging = false;
     public Transform aimPrefab;
     Vector3 hitDirection;
     float hitForce = 1000f;
+
+    public Text moveCounterText;
+    private int moveCounter;
+    private int matchTime;
+
+    private void Awake()
+    {
+        matchTime = 99;
+        moveCounter = matchTime;
+        moveCounterText.text = moveCounter.ToString();
+        instance = GetComponent<Ball>();
+    }
 
     void Start()
     {
@@ -21,6 +36,11 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+        if(moveCounter == 0)
+        {
+            GameOver();
+            StopAllCoroutines();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             rb.isKinematic = true;
@@ -61,6 +81,23 @@ public class Ball : MonoBehaviour
         }
     }
 
+    public int MoveCounter
+    {
+        get { return moveCounter; }
+
+        set
+        {
+            moveCounter = value;
+            moveCounterText.text = moveCounter.ToString();
+        }
+    }
+
+    public void GameOver()
+    {
+        GoalMenu.instance.gameOver = true;
+        GoalMenu.instance.goalMenuHolder.SetActive(true);
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         Goal goal = other.attachedRigidbody?.GetComponent<Goal>();
@@ -78,5 +115,16 @@ public class Ball : MonoBehaviour
         {
             fakegoal.SetTextInactive();
         }
+    }
+
+    private IEnumerable StartCoroutine(int moveCounter)
+    {
+        moveCounter -= (int)Time.deltaTime;
+        if(moveCounter < 0)
+        {
+            GameOver();
+        }
+        yield return new WaitForSeconds(5.0f);
+        StartCoroutine(moveCounter);
     }
 }

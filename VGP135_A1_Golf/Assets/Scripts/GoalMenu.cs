@@ -5,12 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GoalMenu : MonoBehaviour
 {
+    public static GoalMenu instance;
+    public bool gameOver = false;
+
     public string levelSelectSceneName;
     public GameObject goalMenuHolder;
 
     void Start()
     {
         SetGoalMenu(false);
+
+        instance = GetComponent<GoalMenu>();
+        StartCoroutine("LoseTime");
+        Time.timeScale = 1.0f;
     }
 
     public void SetGoalMenu(bool value)
@@ -27,4 +34,14 @@ public class GoalMenu : MonoBehaviour
     {
         SceneManager.LoadScene(levelSelectSceneName);
     }
+
+    IEnumerator LoseTime()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(1.0f);
+            Ball.instance.MoveCounter--;
+        }
+    }
+
 }
