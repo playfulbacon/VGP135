@@ -51,6 +51,15 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
 
+    public void GodModeOn()
+    {
+        agent.speed = 4 * speed;
+    }
+    public void GodModeOff()
+    {
+        agent.speed = speed;
+    }
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
