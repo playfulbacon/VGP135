@@ -756,6 +756,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5368957815824702276, guid: bf70cfd5d9b7f7545b54d59ce44813ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5368957815824702274, guid: bf70cfd5d9b7f7545b54d59ce44813ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -829,6 +834,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Slime (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368957815824702276, guid: bf70cfd5d9b7f7545b54d59ce44813ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5368957815824702274, guid: bf70cfd5d9b7f7545b54d59ce44813ee,
         type: 3}
@@ -1213,6 +1223,12 @@ PrefabInstance:
       propertyPath: drawDebugLines
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8546656403407075288, guid: 4a7ce438d4d65ca43bb4ab7c24aa639b,
+        type: 3}
+      propertyPath: Enemy
+      value: 
+      objectReference: {fileID: 8563920991414601901, guid: 34453a3fd4177a24dbdff7a8d5f547bd,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a7ce438d4d65ca43bb4ab7c24aa639b, type: 3}
 --- !u!1001 &4766142520749358689
@@ -1310,6 +1326,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 5368957815824702276, guid: bf70cfd5d9b7f7545b54d59ce44813ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5368957815824702274, guid: bf70cfd5d9b7f7545b54d59ce44813ee,
         type: 3}
