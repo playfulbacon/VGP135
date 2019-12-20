@@ -14,7 +14,7 @@ public class MingzhuoZhang_ClassShuffler : MonoBehaviour
     {
         var currentClass = GetComponent<Ranger>();
         var attackObj = currentClass.autoAttackObject;
-        Destroy(currentClass);
+       // Destroy(currentClass);
 
         int rand = Random.Range(0, (int)ClassGetter.CharactorClass.NumOfTypes);
 
