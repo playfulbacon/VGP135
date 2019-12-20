@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float rotationSpeed = 20.0f;
     private NavMeshAgent agent;
     private bool isMoving;
-
+    private Player player;
     // - Getter & Setter -----------------------------------------------------------------------
     public bool IsMoving        { get { return isMoving; }}
     public NavMeshAgent Agent   { get { return agent;    }}
@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
         // speed = GetComponent<CharacterStatus>().GetMovementSpeed();
         agent = GetComponent<NavMeshAgent>();
         agent.speed = speed;
+        player = GetComponent<Player>();
     }
 
     void Update()
@@ -39,6 +40,20 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 groundHit = hit.point;
                 agent.destination = groundHit;
             }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("right click pressed");
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit = new RaycastHit();
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 mousePos = hit.point;
+                transform.position = new Vector3(mousePos.x, mousePos.y, mousePos.z);
+                agent.destination = mousePos;
+                Debug.LogWarning("moved player");
+            }
+            player.TeleportAttack();
         }
 
         isMoving = Vector3.SqrMagnitude(agent.velocity) > 1.0f;
