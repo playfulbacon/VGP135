@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Vector3 mousePos = hit.point;
                 transform.position = new Vector3(mousePos.x, mousePos.y, mousePos.z);
+
                 agent.destination = mousePos;
                 Debug.LogWarning("moved player");
             }
