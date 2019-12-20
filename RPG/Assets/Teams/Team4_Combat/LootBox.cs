@@ -46,5 +46,6 @@ public class LootBox : MonoBehaviour
     public void AddLootBoxCount()
     {
         lootCount++;
+        text.text = lootCount.ToString();
     }
 }
