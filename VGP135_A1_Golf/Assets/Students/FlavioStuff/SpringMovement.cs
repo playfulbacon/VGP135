@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpringMovement : MonoBehaviour
 {
     SpringJoint springJoint;
-    Rigidbody rigidbody;
+    Rigidbody myRigidbody;
     bool startTimer;
     [Tooltip("How long does it need to wait for applying velocity")]
     public float delayTime;
@@ -15,7 +15,7 @@ public class SpringMovement : MonoBehaviour
     void Start()
     {
         springJoint = GetComponent<SpringJoint>();
-        rigidbody = GetComponent<Rigidbody>();
+        myRigidbody = GetComponent<Rigidbody>();
         timer = delayTime;
         startTimer = false;
     }
@@ -25,21 +25,21 @@ public class SpringMovement : MonoBehaviour
     {
         if (startTimer)
             timer -= (Time.deltaTime * 1.0f);
-        if (rigidbody)
+        if (myRigidbody)
         {
-            if (rigidbody.velocity.x < 0.2f && rigidbody.velocity.x > -0.2f && !startTimer)
+            if (myRigidbody.velocity.x < 0.2f && myRigidbody.velocity.x > -0.2f && !startTimer)
                 startTimer = true;
 
             if(timer < 0.0f)
             {
                 Debug.Log("Apply foce");
-                rigidbody.velocity -= new Vector3(forceToApply, 0.0f);
+                myRigidbody.velocity -= new Vector3(forceToApply, 0.0f);
                 startTimer = false;
                 timer = delayTime;
             }
         }
 
         //Debug.Log("Spring Current force " + springJoint.currentForce);
-        Debug.Log("Obj velocity =  " + rigidbody.velocity);
+        Debug.Log("Obj velocity =  " + myRigidbody.velocity);
     }
 }

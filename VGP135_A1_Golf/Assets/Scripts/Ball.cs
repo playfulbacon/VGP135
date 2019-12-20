@@ -38,7 +38,7 @@ public class Ball : MonoBehaviour
     {
         if(moveCounter == 0)
         {
-            GameOver();
+            SetGameOver();
             StopAllCoroutines();
         }
         if (Input.GetMouseButtonDown(0))
@@ -91,11 +91,12 @@ public class Ball : MonoBehaviour
             moveCounterText.text = moveCounter.ToString();
         }
     }
-
-    public void GameOver()
+    
+    public void SetGameOver()
     {
-        GoalMenu.instance.gameOver = true;
-        GoalMenu.instance.goalMenuHolder.SetActive(true);
+        GameOver.instance.gameOver = true;
+        Time.timeScale = 0.0f;
+        GameOver.instance.gameOverHolder.SetActive(true);
     }
 
     public void OnTriggerEnter(Collider other)
@@ -122,7 +123,7 @@ public class Ball : MonoBehaviour
         moveCounter -= (int)Time.deltaTime;
         if(moveCounter < 0)
         {
-            GameOver();
+            SetGameOver();
         }
         yield return new WaitForSeconds(5.0f);
         StartCoroutine(moveCounter);

@@ -217,6 +217,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectHole (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: m_Text
+      value: Final Level
+      objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -281,11 +286,6 @@ PrefabInstance:
         type: 3}
       propertyPath: authorName
       value: Viren Ahluwalia
-      objectReference: {fileID: 0}
-    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
-        type: 3}
-      propertyPath: m_Text
-      value: Level 4
       objectReference: {fileID: 0}
     - target: {fileID: 7935085045648913843, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -480,6 +480,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectHole (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: m_Text
+      value: Level 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -550,11 +555,6 @@ PrefabInstance:
       propertyPath: sceneNameText
       value: 
       objectReference: {fileID: 43343926}
-    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
-        type: 3}
-      propertyPath: m_Text
-      value: Level 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7935085045648913843, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_Text
@@ -1149,6 +1149,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectHole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: m_Text
+      value: Level 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1213,11 +1218,6 @@ PrefabInstance:
         type: 3}
       propertyPath: authorName
       value: Viren Ahluwalia
-      objectReference: {fileID: 0}
-    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
-        type: 3}
-      propertyPath: m_Text
-      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 7935085045648913843, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -1317,6 +1317,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectHole
       objectReference: {fileID: 0}
+    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: m_Text
+      value: Level 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1382,20 +1387,15 @@ PrefabInstance:
       propertyPath: authorName
       value: Viren Ahluwalia
       objectReference: {fileID: 0}
-    - target: {fileID: 1145874471010685012, guid: 7f17882801be7ba4288998f02949a63f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
-        type: 3}
-      propertyPath: m_Text
-      value: Level 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7935085045648913843, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_Text
       value: Viren Ahluwalia
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145874471010685012, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f17882801be7ba4288998f02949a63f, type: 3}
@@ -1428,7 +1428,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad61b6dba269e0d43a8a24b5d780abe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: 0
   levelSelectSceneName: Viren_Level1
   goalMenuHolder: {fileID: 2113011897}
 --- !u!4 &1600818770
@@ -1517,6 +1516,11 @@ PrefabInstance:
       propertyPath: moveCounterText
       value: 
       objectReference: {fileID: 43899029}
+    - target: {fileID: 1050037476697080967, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1b78ee7f7c2e25488f7a4efe92f6943, type: 3}
 --- !u!1 &2007370180 stripped

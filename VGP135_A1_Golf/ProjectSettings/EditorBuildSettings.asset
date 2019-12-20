@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/LevelSelect.unity
-    guid: 061a8c8903e7c97488d6a63a927d9496
+    path: Assets/Students/Viren/Level_Select.unity
+    guid: ca365ce878f689945842c6f6eb8e7c92
   - enabled: 1
     path: Assets/Students/Viren/Viren_Level1.unity
     guid: c1b8c0358d1434a5c881221a82707a23
