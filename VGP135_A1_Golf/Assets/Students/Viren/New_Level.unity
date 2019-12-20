@@ -621,7 +621,7 @@ PrefabInstance:
     - target: {fileID: 1252872467850152371, guid: c82a51a87730d4842a0a19037778112c,
         type: 3}
       propertyPath: levelSelectSceneName
-      value: Team_LevelSelect
+      value: LevelSelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c82a51a87730d4842a0a19037778112c, type: 3}
@@ -809,8 +809,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a40a0aadc48b6f448a0b016bd0465c05, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3036,13 +3036,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1871549677}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46539fe1d24f0d74ab9903da6e7109b0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ca850b7e1c0b4b399fa8e0bfa1be82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSelectSceneName: Team_LevelSelect
+  levelSelectSceneName: LevelSelect
   pauseMenuHolder: {fileID: 698345760}
   pauseButtonHolder: {fileID: 1195581957}
-  isPaused: 0
+  pause: 0
 --- !u!4 &1877436434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 419944, guid: ef6f948035a3ee0479a4dcaadbaa7c6e,

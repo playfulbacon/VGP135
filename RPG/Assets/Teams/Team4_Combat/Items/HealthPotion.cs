@@ -4,7 +4,7 @@ using UnityEngine;
 
 public sealed class HealthPotion : Consumable
 {
-    int mRecoverAmount = 10;
+    //int mRecoverAmount = 10;
 
     public override void UseItem()
     {
@@ -12,8 +12,8 @@ public sealed class HealthPotion : Consumable
         {
             ConsumeItem();
             Player player = FindObjectOfType<Player>();
-            //if(player)
-                //player.Heal(mRecoverAmount);
+            //if (player)
+            //    player.Heal(mRecoverAmount);
         }
     }
 
