@@ -28,48 +28,52 @@ public class OneBall : MonoBehaviour
 
     void Update()
     {
-        Failure();
-        Debug.Log(timeCount);
-        timeCount += Time.fixedDeltaTime;
-        if (Input.GetMouseButtonDown(0))
+        if (Time.timeScale != 0.0f)
         {
-            rb.isKinematic = true;
-            isPressed = true;
-        }
-
-        if (isPressed && (moveCount<1))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit = new RaycastHit();
-            if (Physics.Raycast(ray, out hit))
+            Failure();
+            Debug.Log(timeCount);
+            timeCount += Time.fixedDeltaTime;
+            if (Input.GetMouseButtonDown(0))
             {
-                Vector3 groundHit = hit.point;
-                groundHit.y = transform.position.y;
+                rb.isKinematic = true;
+                isPressed = true;
+            }
 
-                if (Vector3.Distance(transform.position, groundHit) > 0.5f)
+            if (isPressed && (moveCount < 1))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit = new RaycastHit();
+                if (Physics.Raycast(ray, out hit))
                 {
-                    isDragging = true;
-                    aimPrefab.gameObject.SetActive(true);
+                    Vector3 groundHit = hit.point;
+                    groundHit.y = transform.position.y;
 
-                    hitDirection = -(groundHit - transform.position).normalized;
-                    aimPrefab.transform.forward = hitDirection;
-                    aimPrefab.position = transform.position + hitDirection * 1.25f;
+                    if (Vector3.Distance(transform.position, groundHit) > 0.5f)
+                    {
+                        isDragging = true;
+                        aimPrefab.gameObject.SetActive(true);
+
+                        hitDirection = -(groundHit - transform.position).normalized;
+                        aimPrefab.transform.forward = hitDirection;
+                        aimPrefab.position = transform.position + hitDirection * 1.25f;
+                    }
                 }
             }
-        }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            moveCount++;
-            rb.isKinematic = false;
-            isPressed = false;
-            aimPrefab.gameObject.SetActive(false);
 
-            if (isDragging)
-                rb.AddForce(hitDirection * hitForce);
+            if (Input.GetMouseButtonUp(0))
+            {
+                moveCount++;
+                rb.isKinematic = false;
+                isPressed = false;
+                aimPrefab.gameObject.SetActive(false);
 
-            isDragging = false;
-           
+                if (isDragging)
+                    rb.AddForce(hitDirection * hitForce);
+
+                isDragging = false;
+
+            }
         }
     }
 
