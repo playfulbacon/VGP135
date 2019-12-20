@@ -62,10 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Interactable.cs" />
     <Compile Include="Assets\Inventory.cs" />
     <Compile Include="Assets\InventorySlot.cs" />
     <Compile Include="Assets\InventoryUI.cs" />
     <Compile Include="Assets\Item.cs" />
+    <Compile Include="Assets\ItemPickUp.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/423303/Desktop/Viren/RPG/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -5,7 +5,7 @@ public class InventorySlot : MonoBehaviour
 {
     public Image icon;
     Item item;
-   public void AddItem(Item item)
+    public void AddItem(Item item)
     {
         icon.sprite = item.icon;
         icon.enabled = true;

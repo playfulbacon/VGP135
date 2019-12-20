@@ -13,6 +13,7 @@ public class InventoryUI : MonoBehaviour
     void Start()
     {
         inventory = Inventory.instance;
+        inventory.onItemChanged += UpdateUI;
         slots = items.GetComponentsInChildren<InventorySlot>();
     }
 
@@ -26,7 +27,7 @@ public class InventoryUI : MonoBehaviour
     {
         for(int i =0; i < slots.Length; i++)
         {
-            if(i < inventory.items.Length)
+            if(i < inventory.items.Count)
             {
                 slots[i].AddItem(inventory.items[i]);
             }
