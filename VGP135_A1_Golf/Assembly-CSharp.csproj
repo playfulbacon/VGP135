@@ -63,14 +63,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Aimer.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <Compile Include="Assets\Launch.cs" />
->>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
-=======
->>>>>>> 9e0a4bd911a86d3d8e4aa09420a1606b08586cd0
     <Compile Include="Assets\LevelSelectSetup.cs" />
+    <Compile Include="Assets\RoundTimer.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
     <Compile Include="Assets\Scripts\BallHealth.cs" />
     <Compile Include="Assets\Scripts\FollowObject.cs" />
@@ -79,11 +74,19 @@
     <Compile Include="Assets\Scripts\LevelSelectHole.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Students\Aisle_Neral\RespawnCube.cs" />
+    <Compile Include="Assets\Students\Amy\Scripts\Ball_Amy.cs" />
+    <Compile Include="Assets\Students\Amy\Scripts\Explosion.cs" />
     <Compile Include="Assets\Students\Amy\Scripts\Hole.cs" />
+    <Compile Include="Assets\Students\AndyBacon\AdsManager.cs" />
+    <Compile Include="Assets\Students\AndyBacon\Collectable.cs" />
+    <Compile Include="Assets\Students\AndyBacon\CollectableManager.cs" />
+    <Compile Include="Assets\Students\AndyBacon\CollectablesUI.cs" />
     <Compile Include="Assets\Students\AndyBacon\Key.cs" />
     <Compile Include="Assets\Students\AndyBacon\KeyCollector.cs" />
     <Compile Include="Assets\Students\AndyBacon\LockedDoor.cs" />
     <Compile Include="Assets\Students\AndyBacon\MoveBackAndForth.cs" />
+    <Compile Include="Assets\Students\AndyBacon\WatchAdButton.cs" />
+    <Compile Include="Assets\Students\Cyro\Scripts\Traps.cs" />
     <Compile Include="Assets\Students\FlavioStuff\FanRotation.cs" />
     <Compile Include="Assets\Students\FlavioStuff\Obstacle.cs" />
     <Compile Include="Assets\Students\FlavioStuff\ResetLevel.cs" />
@@ -103,6 +106,8 @@
     <Compile Include="Assets\Students\MingzhuoZhang\Mingzhuo_MovingCube.cs" />
     <Compile Include="Assets\Students\MingzhuoZhang\Mingzhuo_Rotatable.cs" />
     <Compile Include="Assets\Students\MingzhuoZhang\Mingzhuo_TriggerObject.cs" />
+    <Compile Include="Assets\Students\MingzhuoZhang\MingzhuoZhang_Agent.cs" />
+    <Compile Include="Assets\Students\MingzhuoZhang\MingzhuoZhang_FireObject.cs" />
     <Compile Include="Assets\Students\Team1\PauseMenu.cs" />
     <Compile Include="Assets\Students\Wallace\Move.cs" />
     <Compile Include="Assets\Students\Wallace\Rotatetion.cs" />
@@ -111,60 +116,28 @@
     <Compile Include="Assets\Students\William\Shrink.cs" />
     <None Include="Assets\Students\AndyBacon\Key\readME keys.txt" />
     <Reference Include="Unity.Timeline.Editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Monetization">
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
-=======
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
->>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
-=======
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
->>>>>>> 9e0a4bd911a86d3d8e4aa09420a1606b08586cd0
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -350,31 +323,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
-=======
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
->>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-<<<<<<< HEAD
-      <HintPath>C:/Users/423302/Desktop/Kevin/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
-=======
-      <HintPath>C:/Users/1820035/Downloads/VGP135/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
->>>>>>> e59ff382413d2286d80e204520f8fd43e12387bc
-=======
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/1840378/Desktop/JustinStuff/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
->>>>>>> 9e0a4bd911a86d3d8e4aa09420a1606b08586cd0
+      <HintPath>C:/Users/1840378/Desktop/playfulbacon/VGP135_A1_Golf/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.10f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
