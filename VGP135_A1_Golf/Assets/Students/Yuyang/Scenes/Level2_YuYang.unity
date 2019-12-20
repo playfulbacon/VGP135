@@ -564,9 +564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b95b23b1926d1f4eb00a0e2177d073b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reds: {fileID: 4800000, guid: 8daf367df93105c4db3a398cdc387233, type: 3}
-  blues: {fileID: 4800000, guid: 89c531640c76c2f42b7c998397cdeb94, type: 3}
-  greens: {fileID: 4800000, guid: 709cb69febb4974459e65d2527570d98, type: 3}
   rend: {fileID: 410663300}
 --- !u!1001 &684071711
 PrefabInstance:
@@ -767,8 +764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 115, y: 74}
-  m_SizeDelta: {x: -432, y: 160}
+  m_AnchoredPosition: {x: 104.3, y: 152.6}
+  m_SizeDelta: {x: -432, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717057475
 MonoBehaviour:
@@ -1088,6 +1085,8 @@ GameObject:
   - component: {fileID: 1115203485}
   - component: {fileID: 1115203484}
   - component: {fileID: 1115203483}
+  - component: {fileID: 1115203487}
+  - component: {fileID: 1115203488}
   m_Layer: 5
   m_Name: Customization
   m_TagString: Untagged
@@ -1178,6 +1177,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1115203487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115203482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b674564cc3ae1d342a010b83bfdcd402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1115203488}
+--- !u!225 &1115203488
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115203482}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1397539334 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6517565095018281358, guid: 627ac9e45212c714881e7971dfdb62d9,

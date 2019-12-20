@@ -6,14 +6,11 @@ using UnityEngine.SceneManagement;
 public class Customized_YuYang : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Shader reds;
-    public Shader blues;
-    public Shader greens;
     public Renderer rend;
     //public GameObject red;
     //public GameObject green;
     //public GameObject blue;
-
+    
 
     void Start()
     {
@@ -21,23 +18,24 @@ public class Customized_YuYang : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
-        
+        /// Debug Purposes
     }
+
+
     public void RedButtonDown()
     {
-        Time.timeScale = 0;
-        rend.material.color = Color.red;
+        rend.material.SetColor("_Color", Color.red);
     }
     public void BlueButtonDown()
     {
-        Time.timeScale = 0;
-        rend.material.shader = blues;
+        rend.material.SetColor("_Color", Color.blue);
+
     }
     public void GreenButtonDown()
     {
-        Time.timeScale = 0;
-        rend.material.shader = greens;
+        rend.material.SetColor("_Color", Color.green);
+
     }
 }

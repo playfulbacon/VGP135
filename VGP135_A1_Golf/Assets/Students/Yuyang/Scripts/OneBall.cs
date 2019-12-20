@@ -16,13 +16,14 @@ public class OneBall : MonoBehaviour
     float hitForce = 1000f;
     public GoalYuYang goal2;
     float timeCount = 0;
-
+    //public CustomizedOption cp;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         aimPrefab = Instantiate(aimPrefab);
         aimPrefab.gameObject.SetActive(false);
         timeCount = 0;
+        
     }
 
     void Update()
