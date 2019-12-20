@@ -29,16 +29,16 @@ public class AttackManager : MonoBehaviour
         foreach (Enemy enemy in enemies)
         {
             RaycastHit hit;
-            Physics.Raycast(transform.position,(enemy.transform.position - transform.position), out hit);
+            Physics.Raycast(transform.position, (enemy.transform.position - transform.position), out hit);
             if (hit.collider && !hit.collider.CompareTag("Enemy"))
             {
                 continue;
             }
             float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
-            if (distance < closestDistance)
+            if (distance < closestDistance && (closestTarget != null))
             {
                 closestTarget = enemy;
-                closestDistance = distance;
+                distance = closestDistance;
             }
         }
     }
