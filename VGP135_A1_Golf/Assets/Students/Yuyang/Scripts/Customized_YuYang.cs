@@ -16,11 +16,11 @@ public class Customized_YuYang : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
 
-            Show();
-        }
+        //    Show();
+        //}
     }
     void Hide()
     {
@@ -38,6 +38,10 @@ public class Customized_YuYang : MonoBehaviour
         canvasGroup.blocksRaycasts = true;
     }
 
+    public void SetButtonDown()
+    {
+        Show();
+    }
 
     public void RedButtonDown()
     {
