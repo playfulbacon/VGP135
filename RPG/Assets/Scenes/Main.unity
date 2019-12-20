@@ -807,6 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf769bfa99c8af74f91bd005602aa6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1001 &1492479775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1043,6 +1044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58646ccd33dfe049a242a8ee9111987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> MingzhuoZhang
 --- !u!1 &1799008936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,16 +1277,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4815617913859072201, guid: 879fb6c9b872bf64ab052b7104e7f540,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4766142521128380864, guid: 879fb6c9b872bf64ab052b7104e7f540,
-        type: 3}
-      propertyPath: m_AngularSpeed
-      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 879fb6c9b872bf64ab052b7104e7f540, type: 3}
