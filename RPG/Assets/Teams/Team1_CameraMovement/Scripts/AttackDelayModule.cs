@@ -9,6 +9,7 @@ public class AttackDelayModule : MonoBehaviour
     private PlayerMovement mPlayerMovment;
     private PlayerAnimationController mAnimationController;
 
+    private Enemy mPrevTarget;
     private Enemy mTarget;
     private float mShootDelayCounter = 0.0f;
     private bool mIsShooting = false;
@@ -25,7 +26,7 @@ public class AttackDelayModule : MonoBehaviour
         Assert.IsNotNull(mAnimationController, "[AttackDelayModule]--- mAnimationController is null");
     }
 
-    
+
     void FixedUpdate()
     {
         if (!mTarget)
@@ -34,13 +35,13 @@ public class AttackDelayModule : MonoBehaviour
             return;
         }
 
-        if(!mPlayerMovment.IsMoving)
+        if (!mPlayerMovment.IsMoving)
             mPlayerMovment.RotateTowards(mTarget.transform);
         else
             mShootDelayCounter = 0.0f;
 
         if ((mShootDelayCounter > mAnimationController.GetShootDelay()) && (mPlayerMovment.Agent.velocity.sqrMagnitude == 0.0f))
-        {   
+        {
             mPlayer.AutoAttack(mTarget);
             mShootDelayCounter = 0.0f;
             mIsShooting = false;
@@ -54,7 +55,27 @@ public class AttackDelayModule : MonoBehaviour
     public void AttackWithDelay(Enemy target)
     {
         mAnimationController.SetAttackAnimation();
-        mTarget = target;
+        if (mTarget && mTarget != target)
+        {
+            var ui = mTarget.GetComponent<TargetUI>();
+            if (ui)
+            {
+                ui.SetDisplayOnPlayerTarget(false);
+            }
+            mPrevTarget = mTarget;
+            mTarget = target;
+        }
+        else if (!mTarget)
+        {
+            var ui = target.GetComponent<TargetUI>();
+            if (ui)
+            {
+                ui.SetDisplayOnPlayerTarget(true);
+            }
+            mTarget = target;
+        }
+       
+        //mTarget = target;
         mIsShooting = true;
     }
 
