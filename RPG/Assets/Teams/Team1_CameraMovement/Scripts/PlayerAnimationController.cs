@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEditor.Animations;
-
+//using UnityEditor.Animations;
+using UnityEngine.Animations;
 public class PlayerAnimationController : MonoBehaviour
 {
     private ModelManager.ClassModelData mModelData;
@@ -23,23 +23,13 @@ public class PlayerAnimationController : MonoBehaviour
         mAnimator = GetComponentInChildren<Animator>();
         Assert.IsNotNull(mAnimator, "[PlayerAnimationController]--- mAnimatorController is null");
 
-         var mAnimatorController = mAnimator.runtimeAnimatorController as AnimatorController;
+         var mAnimatorController = mAnimator.runtimeAnimatorController as RuntimeAnimatorController;
         Assert.IsNotNull(mAnimatorController, "[PlayerAnimationController]--- mAnimatorController is null");
         mPlayerMovment = GetComponentInChildren<PlayerMovement>();
         Assert.IsNotNull(mPlayerMovment, "[PlayerAnimationController]--- mPlayer is null");
 
-        ChildAnimatorState[] states = mAnimatorController.layers[0].stateMachine.states;
+        mDefaultAttakSpeed = mAnimatorController.animationClips[1].length;
 
-        foreach (var state in states)
-        {
-            if (state.state.name == "attack")
-            {
-                AnimationClip clip = state.state.motion as AnimationClip;
-                mDefaultAttakSpeed = clip.length;
-                Debug.Log(clip.name);
-                break;
-            }
-        }
         Debug.Log(mDefaultAttakSpeed);
 
         UpdateAttackAnimationSpeed_mutiplier(mPlayer.GetAttackSpeed());
