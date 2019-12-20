@@ -35,7 +35,11 @@ public class AttackManager : MonoBehaviour
                 continue;
             }
             float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
+<<<<<<< HEAD
             if (distance < closestDistance )
+=======
+            if (distance < closestDistance)
+>>>>>>> a5687dd1029e097eda883b5c639fbc5bbcd79e67
             {
                 closestTarget = enemy;
                 distance = closestDistance;
@@ -47,7 +51,7 @@ public class AttackManager : MonoBehaviour
     {
         if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed())
         {
-            //player.AutoAttack(closestTarget);
+            player.AutoAttack(closestTarget);
             GetComponent<AttackDelayModule>().AttackWithDelay(closestTarget);
             attackCooldown = 0.0f;
         }

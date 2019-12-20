@@ -28,52 +28,47 @@ public class OneBall : MonoBehaviour
 
     void Update()
     {
-        if (Time.timeScale != 0.0f)
+        Failure();
+        Debug.Log(timeCount);
+        timeCount += Time.fixedDeltaTime;
+        if (Input.GetMouseButtonDown(0))
         {
-            Failure();
-            Debug.Log(timeCount);
-            timeCount += Time.fixedDeltaTime;
-            if (Input.GetMouseButtonDown(0))
-            {
-                rb.isKinematic = true;
-                isPressed = true;
-            }
+            rb.isKinematic = true;
+            isPressed = true;
+        }
 
-            if (isPressed && (moveCount < 1))
+        if (isPressed)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit = new RaycastHit();
+            if (Physics.Raycast(ray, out hit))
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit = new RaycastHit();
-                if (Physics.Raycast(ray, out hit))
+                Vector3 groundHit = hit.point;
+                groundHit.y = transform.position.y;
+
+                if (Vector3.Distance(transform.position, groundHit) > 0.5f)
                 {
-                    Vector3 groundHit = hit.point;
-                    groundHit.y = transform.position.y;
+                    isDragging = true;
+                    aimPrefab.gameObject.SetActive(true);
 
-                    if (Vector3.Distance(transform.position, groundHit) > 0.5f)
-                    {
-                        isDragging = true;
-                        aimPrefab.gameObject.SetActive(true);
-
-                        hitDirection = -(groundHit - transform.position).normalized;
-                        aimPrefab.transform.forward = hitDirection;
-                        aimPrefab.position = transform.position + hitDirection * 1.25f;
-                    }
+                    hitDirection = -(groundHit - transform.position).normalized;
+                    aimPrefab.transform.forward = hitDirection;
+                    aimPrefab.position = transform.position + hitDirection * 1.25f;
                 }
             }
+        }
 
+        if (Input.GetMouseButtonUp(0))
+        {
+            rb.isKinematic = false;
+            isPressed = false;
+            aimPrefab.gameObject.SetActive(false);
 
-            if (Input.GetMouseButtonUp(0))
-            {
-                moveCount++;
-                rb.isKinematic = false;
-                isPressed = false;
-                aimPrefab.gameObject.SetActive(false);
+            if (isDragging)
+                rb.AddForce(hitDirection * hitForce);
 
-                if (isDragging)
-                    rb.AddForce(hitDirection * hitForce);
-
-                isDragging = false;
-
-            }
+            isDragging = false;
+           
         }
     }
 
@@ -85,19 +80,16 @@ public class OneBall : MonoBehaviour
             goal.OnHit();
             rb.isKinematic = true;
             isWon = true;
-            moveCount = 0;
             timeCount = 0;
         }
     }
 
     public void Failure()
     {       
-        if (moveCount == 1 && (isWon == false) && ((timeCount>25)))
+        if ((isWon == false) && ((timeCount>25)))
         {
             goal2.NotHit();
             rb.isKinematic = true;
-            moveCount = 0;
-            //timeCount = 0;
         }
         
     }
