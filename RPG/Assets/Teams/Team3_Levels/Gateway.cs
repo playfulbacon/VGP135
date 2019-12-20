@@ -28,7 +28,7 @@ public class Gateway : InteractableObj
                     int i = Random.Range(0, presetScenes.Length);
                     if (presetScenes[i] != null)
                     {
-                        SceneManager.LoadScene(presetScenes[i]); //choose a random preset level
+                        SceneManager.LoadScene(0); //choose a random preset level
 
                         LevelCleanUp(ref obj); //Clean up after loading a new scene
                     }

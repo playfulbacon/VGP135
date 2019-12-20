@@ -5,6 +5,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     GameObject target;
+    
     public GameObject Target { set { target = value; } }
     public float moveSpeed = 10.0f;
     public int damage;
@@ -34,6 +35,7 @@ public class Arrow : MonoBehaviour
             if (enemy)
             {
                 enemy.TakeDamage(damage);
+                GameObject.Find("Damage Holder").GetComponent<TotalDamage>().Damage += damage;
             }
             destroy = true;
         }
