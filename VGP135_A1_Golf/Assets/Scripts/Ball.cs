@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     bool isPressed = false;
     bool isDragging = false;
     public Transform aimPrefab;
+    public AudioSource Hit;
     Vector3 hitDirection;
     float hitMaxForce = 1000f;
 
@@ -79,11 +80,18 @@ public class Ball : MonoBehaviour
             currentForceDistance = (mouseFinalPosition - mouseStartPosition).magnitude;
 
             forcePercentage = currentForceDistance / maxForceDistance;
-
+            Hit.volume = forcePercentage;
             if (forcePercentage > 1.0f)
+            {
                 forcePercentage = 1.0f;
+                Hit.volume = 1;
+            }
+            
+        
 
             aimPrefab.GetComponent<Aimer>().forceQuad.transform.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
+            
+            
             //aimPrefab.localScale = new Vector3(aimPrefab.localScale.x, aimPrefab.localScale.y, -(aimPrefabZLength * forcePercentage));
         }
 
@@ -100,7 +108,7 @@ public class Ball : MonoBehaviour
 
             isDragging = false;
             currentForce = 0.0f;
-
+            Hit.Play();
             Time.timeScale = 1.0f;
         }
 
