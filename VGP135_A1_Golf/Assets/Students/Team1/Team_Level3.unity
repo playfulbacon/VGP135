@@ -3729,6 +3729,7 @@ MonoBehaviour:
   levelSelectSceneName: Team_LevelSelect
   pauseMenuHolder: {fileID: 875223383}
   pauseButtonHolder: {fileID: 1112355529}
+  isPaused: 0
 --- !u!4 &2043324703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 437500, guid: e627e943778a1c748821cf982601b57d,

@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class DeathZone : MonoBehaviour
 {
-    public string startScene;
-
     void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
