@@ -139,13 +139,20 @@ public class Stats : MonoBehaviour
         attackSpeed = 10 / currentDexterity;
     }
 
-
     public int GetStatPointsToSpend()
     {
         return leftoverStatPoints;
     }
+    
     public void SetNumberStatPointsToSpend(int n)
     {
         leftoverStatPoints = n;
+    }
+
+    /// Hleath Functions ---------------------------------------------------------
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+        set { currentHealth = value; }
     }
 }

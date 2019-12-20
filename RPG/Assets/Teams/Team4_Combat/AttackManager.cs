@@ -10,7 +10,7 @@ public class AttackManager : MonoBehaviour
     Enemy closestTarget;
     float closestDistance = float.MaxValue;
     float attackCooldown = 0.0f;
-
+    private float attackRange = 5.0f;
     private void Awake()
     {
         
@@ -42,6 +42,15 @@ public class AttackManager : MonoBehaviour
 
             }
         }
+
+        if(CheckObjectinAttackRange(closestTarget))
+            closestTarget = null;
+    }
+
+    public bool CheckObjectinAttackRange(Enemy tempEnemy)
+    {
+        float distance = Vector3.Distance(tempEnemy.transform.position, player.transform.position);
+        return distance >= attackRange ? true : false;
     }
 
     void PlayerAttack()

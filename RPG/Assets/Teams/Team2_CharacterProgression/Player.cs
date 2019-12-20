@@ -26,12 +26,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
+        if (stats.CurrentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         print("take damage");
+        stats.CurrentHealth -= (float)damage;
     }
 
     public float GetAttackSpeed()
