@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 5.0f;
     [SerializeField]
     private float rotationSpeed = 20.0f;
+    float speedCooldown = 5.0f;
     private NavMeshAgent agent;
     private bool isMoving;
     private Player player;
+    private bool speedCooldownBool;
     // - Getter & Setter -----------------------------------------------------------------------
-    public bool IsMoving        { get { return isMoving; }}
-    public NavMeshAgent Agent   { get { return agent;    }}
+    public bool IsMoving { get { return isMoving; } }
+    public NavMeshAgent Agent { get { return agent; } }
 
     // - MonoBehavior functions ----------------------------------------------------------------
     void Awake()
@@ -55,6 +57,23 @@ public class PlayerMovement : MonoBehaviour
             }
             player.TeleportAttack();
         }
+        if (Input.GetKeyDown(KeyCode.Q) && !speedCooldownBool)
+        {
+            speedCooldownBool = true;
+            agent.speed += 5.0f;
+        }
+        if (speedCooldownBool)
+        {
+            speedCooldown -= Time.deltaTime;
+        }
+        if (speedCooldown <= 0)
+        {
+            agent.speed = speed;
+            speedCooldownBool = false;
+            speedCooldown = 5.0f;
+        }
+
+
 
         isMoving = Vector3.SqrMagnitude(agent.velocity) > 1.0f;
     }
