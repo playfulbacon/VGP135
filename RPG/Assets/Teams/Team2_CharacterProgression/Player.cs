@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
+       
     }
 
     public void TakeDamage(int damage)
@@ -61,5 +61,26 @@ public class Player : MonoBehaviour
         GameObject go = Instantiate(autoAttackObject, transform.position + (direction * 1.0f), Quaternion.identity);
         go.transform.forward = direction;
         go.GetComponent<Arrow>().Target = enemyTarget.gameObject;
+    }
+    public void TeleportAttack()
+    {
+        Debug.LogWarning("Teleport attack");
+        
+        for(int i = 0; i < 36; ++i)
+        {
+            //Vector3 dir = Quaternion.AngleAxis(i * 36.0f, Vector3.up).eulerAngles; /** transform.position*/;
+            float radius = 5.0f;
+            Vector3 targetPosition = new Vector3(Mathf.Sin(i * 10.0f) * radius, transform.position.y, Mathf.Cos(i * 36.0f) * radius) + transform.position;
+
+            Vector3 dir = targetPosition - transform.position;
+            dir.y = transform.position.y;
+
+            Vector3 spawnPosition = transform.position + dir.normalized * 5.0f;
+            spawnPosition.y += 1f;
+            GameObject go = Instantiate(autoAttackObject, spawnPosition, Quaternion.identity);
+            dir.y = 0.0f;
+            go.transform.forward = dir.normalized;
+            Debug.LogWarning("spawned thingy");
+        }
     }
 }
