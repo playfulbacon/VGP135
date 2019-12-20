@@ -128,4 +128,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Students/MingzhuoZhang/MingzhuoZhang_FinalFeature.unity
     guid: 4a906a08998bb154895fa23acaaef7b9
+  - enabled: 1
+    path: Assets/Students/Yuyang/Scenes/LevelSelect_YuYang.unity
+    guid: 061a8c8903e7c97488d6a63a927d9496
+  - enabled: 1
+    path: Assets/Students/Yuyang/Scenes/Level1_YuYang.unity
+    guid: c48a1757bdec3134785418296b888963
+  - enabled: 1
+    path: Assets/Students/Yuyang/Scenes/Level2_YuYang.unity
+    guid: af66dc6a2b32df848ad0667545abc047
+  - enabled: 1
+    path: Assets/Students/Yuyang/Scenes/Level3_YuYang.unity
+    guid: f05284732ad044d469788774255b0ab1
+  - enabled: 1
+    path: Assets/Students/Yuyang/Scenes/Menu_YuYang.unity
+    guid: 0a70ca3e1241bb640af1212268346bc1
   m_configObjects: {}
