@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Main.unity
+- path: C:/Users/1924866/Desktop/135/VGP135_A1_Golf/Assets/Students/Aisle_Neral/Aisle_Level_1.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

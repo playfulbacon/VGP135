@@ -57,15 +57,18 @@ public class PlayerMovement : MonoBehaviour
             }
             player.TeleportAttack();
         }
-        if (Input.GetKeyDown(KeyCode.Q) && !speedCooldownBool)
-        {
-            speedCooldownBool = true;
-            agent.speed += 5.0f;
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        { 
+
+            StartHaste();
         }
+
         if (speedCooldownBool)
         {
             speedCooldown -= Time.deltaTime;
         }
+
         if (speedCooldown <= 0)
         {
             agent.speed = speed;
@@ -76,6 +79,15 @@ public class PlayerMovement : MonoBehaviour
 
 
         isMoving = Vector3.SqrMagnitude(agent.velocity) > 1.0f;
+    }
+
+    public void StartHaste()
+    {
+        if (!speedCooldownBool)
+        {
+        agent.speed += 5.0f;
+            speedCooldownBool = true;
+        }
     }
 
     public void RotateTowards(Transform target)
