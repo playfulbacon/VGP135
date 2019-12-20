@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad61b6dba269e0d43a8a24b5d780abe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSelectSceneName: LevelSelect
+  levelSelectSceneName: FlavioLevelSelect
   goalMenuHolder: {fileID: 4394561949991961850}
 --- !u!1 &4394561949991961850
 GameObject:
