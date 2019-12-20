@@ -35,7 +35,7 @@ public class AttackManager : MonoBehaviour
                 continue;
             }
             float distance = Vector3.Distance(player.transform.position, enemy.transform.position);
-            if (distance < closestDistance && (closestTarget != null))
+            if (distance < closestDistance)
             {
                 closestTarget = enemy;
                 distance = closestDistance;
