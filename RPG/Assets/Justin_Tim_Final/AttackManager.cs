@@ -30,7 +30,7 @@ public class AttackManager : MonoBehaviour
         foreach (Enemy enemy in enemies)
         {
             RaycastHit hit;
-            Physics.Raycast(transform.position,(enemy.transform.position - transform.position), out hit);
+            Physics.Raycast(transform.position, (enemy.transform.position - transform.position), out hit);
             if (hit.collider && !hit.collider.CompareTag("Enemy"))
             {
                 continue;
@@ -39,7 +39,7 @@ public class AttackManager : MonoBehaviour
             if (distance < closestDistance)
             {
                 closestTarget = enemy;
-                closestDistance = distance;
+                distance = closestDistance;
             }
         }
     }
@@ -55,7 +55,7 @@ public class AttackManager : MonoBehaviour
         if (closestTarget != null && !player.GetComponent<PlayerMovement>().IsMoving && attackCooldown > player.GetAttackSpeed()
             && Vector3.Distance(closestTarget.transform.position,player.transform.position) <= attackRange)
         {
-            //player.AutoAttack(closestTarget);
+            player.AutoAttack(closestTarget);
             GetComponent<AttackDelayModule>().AttackWithDelay(closestTarget);
             attackCooldown = 0.0f;
         }

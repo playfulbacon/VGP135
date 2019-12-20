@@ -450,7 +450,7 @@ PrefabInstance:
     - target: {fileID: 1553597922951350539, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_Name
-      value: LevelSelectHole (1)
+      value: LevelSelectHole 3
       objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -510,7 +510,12 @@ PrefabInstance:
     - target: {fileID: 9195240595636901473, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: sceneName
-      value: Level3
+      value: KevinXu_Level3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195240595636901473, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: authorName
+      value: Kevin
       objectReference: {fileID: 0}
     - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -596,7 +601,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 20, z: 0}
+  m_LocalPosition: {x: 0, y: 13.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1335280332}
@@ -668,7 +673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33df642a3ccca8e4597d203ef6c5983f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToFollow: {fileID: 2079037514}
   followSpeed: 5
 --- !u!4 &1335280332
 Transform:
@@ -761,12 +765,12 @@ PrefabInstance:
     - target: {fileID: 1553597922951350539, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_Name
-      value: LevelSelectHole (2)
+      value: LevelSelectHole 1
       objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.86
+      value: 7.38
       objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -821,7 +825,12 @@ PrefabInstance:
     - target: {fileID: 9195240595636901473, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: sceneName
-      value: Level1
+      value: KevinXu_Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195240595636901473, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: authorName
+      value: KevinXu
       objectReference: {fileID: 0}
     - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -1013,12 +1022,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2079037514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1050037476697080960, guid: d1b78ee7f7c2e25488f7a4efe92f6943,
-    type: 3}
-  m_PrefabInstance: {fileID: 1050037478394371274}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2119319698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,12 +1132,12 @@ PrefabInstance:
     - target: {fileID: 1553597922951350539, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_Name
-      value: LevelSelectHole
+      value: LevelSelectHole 2
       objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.43
+      value: 1.77
       objectReference: {fileID: 0}
     - target: {fileID: 1553597922951350645, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -1189,7 +1192,12 @@ PrefabInstance:
     - target: {fileID: 9195240595636901473, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
       propertyPath: sceneName
-      value: Level2
+      value: KevinXu_Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9195240595636901473, guid: 7f17882801be7ba4288998f02949a63f,
+        type: 3}
+      propertyPath: authorName
+      value: KevinXu
       objectReference: {fileID: 0}
     - target: {fileID: 6897513554491630541, guid: 7f17882801be7ba4288998f02949a63f,
         type: 3}
@@ -1205,6 +1213,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1209356635}
     m_Modifications:
+    - target: {fileID: 7232979585227150937, guid: ce4dc792537f80b40ad94c196b94b65a,
+        type: 3}
+      propertyPath: m_Name
+      value: ButtonHolder
+      objectReference: {fileID: 0}
     - target: {fileID: 7232979585227150936, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1309,11 +1322,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7232979585227150937, guid: ce4dc792537f80b40ad94c196b94b65a,
-        type: 3}
-      propertyPath: m_Name
-      value: ButtonHolder
       objectReference: {fileID: 0}
     - target: {fileID: 4127051947828859647, guid: ce4dc792537f80b40ad94c196b94b65a,
         type: 3}

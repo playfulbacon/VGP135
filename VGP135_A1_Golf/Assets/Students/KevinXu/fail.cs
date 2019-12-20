@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class fail : MonoBehaviour
 {
+    public GameObject failMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,8 @@ public class fail : MonoBehaviour
 
     public virtual void OnGround()
     {
-        FindObjectOfType<FailMenu>().SetFailMenu(true);
+        Debug.Log("onground");
+        failMenu.SetActive(true);
     }
 
     public void OnTriggerEnter(Collider other)
